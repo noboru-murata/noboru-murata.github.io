@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Noboru Murata</title>
+    <link>https://noboru-murata.github.io/</link>
+    <description>Recent content on Noboru Murata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vitae</title>
+      <link>https://noboru-murata.github.io/vitae/</link>
+      <pubDate>Thu, 01 Aug 2019 09:54:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/vitae/</guid>
+      <description>Biography Noboru Murata received the B. Eng., M. Eng. and Dr. Eng in Mathematical Engineering and Information Physics from the University of Tokyo in 1987, 1989 and 1992, respectively.
+He was a Research Associate at the University of Tokyo, and he was a Visiting Research with the Research Institute for Computer Architecture and Software Technology of German National Research Center for Information Technology (GMD FIRST) from 1995 to 1996 supported by Alexander von Humboldt Foundation.</description>
+    </item>
+    
+    <item>
+      <title>about this site</title>
+      <link>https://noboru-murata.github.io/about/</link>
+      <pubDate>Thu, 01 Aug 2019 09:54:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/about/</guid>
+      <description>This site is produced and maintained by the following tools.
+Hugo [Hugo] (https://gohugo.io) is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+For installing on macOS, it is easy to use Homebrew.
+brew install hugo Hugo theme hello friend NG [Hello Friend NG] (https://themes.gohugo.io/hugo-theme-hello-friend-ng/) is a simple theme for Hugo, which was inspired by the [hello-friend] (https://themes.gohugo.io/hugo-theme-hello-friend/) and [hermit] (https://themes.</description>
+    </item>
+    
+    <item>
+      <title>Information Geometry</title>
+      <link>https://noboru-murata.github.io/research/information-geometry/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+    <item>
+      <title>統計データ解析 (前期・後期金曜5限)</title>
+      <link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/statistical-data-analysis/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+    <item>
+      <title>Estimation of neural connections from partially observed neural spikes</title>
+      <link>https://noboru-murata.github.io/publications/spike-train/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/spike-train/</guid>
+      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N._Neural Networks_Volume 108, December 2018, Pages 172-191https://doi.org/10.1016/j.neunet.2018.07.019
+ Plasticity is one of the most important properties of the nervous system, which enables animals to adjust their behavior to the ever-changing external environment. Changes in synaptic efficacy between neurons constitute one of the major mechanisms of plasticity. Therefore, estimation of neural connections is crucial for investigating information processing in the brain. Although many analysis methods have been proposed for this purpose, most of them suffer from one or all the following mathematical difficulties: (1) only partially observed neural activity is available; (2) correlations can include both direct and indirect pseudo-interactions; and (3) biological evidence that a neuron typically has only one type of connection (excitatory or inhibitory) should be considered.</description>
+    </item>
+    
+    <item>
+      <title>Biological Data Analysis</title>
+      <link>https://noboru-murata.github.io/research/biological-data/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/biological-data/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+    <item>
+      <title>多変量解析 (後期火曜1限)</title>
+      <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
+      <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．また，各手法の考え方を身に付けていくために，統計用の計算機言語Rを使用した実データの分析を演習として行う．</description>
+    </item>
+    
+    <item>
+      <title>Neural network with unbounded activation functions is universal approximator</title>
+      <link>https://noboru-murata.github.io/publications/unbounded-activation/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/unbounded-activation/</guid>
+      <description>Sonoda S., Murata, N._Applied and Computational Harmonic Analysis_Volume 43, Issue 2, September 2017, Pages 233-268https://doi.org/10.1016/j.acha.2015.12.005
+ This paper presents an investigation of the approximation property of neural networks with unbounded activation functions, such as the rectified linear unit (ReLU), which is the new de-facto standard of deep learning. The ReLU network can be analyzed by the ridgelet transform with respect to Lizorkin distributions. By showing three reconstruction formulas by using the Fourier slice theorem, the Radon transform, and Parseval&#39;s relation, it is shown that a neural network with unbounded activation functions still satisfies the universal approximation property.</description>
+    </item>
+    
+    <item>
+      <title>Statistical Machine Learning</title>
+      <link>https://noboru-murata.github.io/research/machine-learning/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+    <item>
+      <title>情報学習論 (前期月曜3限)</title>
+      <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
+      <description>与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．</description>
+    </item>
+    
+    <item>
+      <title>An estimation of generalized Bradley-Terry models based on the em algorithm</title>
+      <link>https://noboru-murata.github.io/publications/geometric-bradley-terry/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/geometric-bradley-terry/</guid>
+      <description>Fujimoto, Y., Hino, H., Murata, N._Neural Computation_Volume 23, Issue 6, June 2011, Pages 1623-1659https://doi.org/10.1162/NECO%5Fa%5F00129
+ The Bradley-Terry model is a statistical representation for one&#39;s preference or ranking data by using pairwise comparison results of items. For estimation of the model, several methods based on the sum of weighted Kullback-Leibler divergences have been proposed from various contexts. The purpose of this letter is to interpret an estimation mechanism of the Bradley-Terry model from the viewpoint of flatness, a fundamental notion used in information geometry.</description>
+    </item>
+    
+    <item>
+      <title>信号処理 (前期金曜1限)</title>
+      <link>https://noboru-murata.github.io/lectures/signal-processing/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/signal-processing/</guid>
+      <description>信号処理とは音・光・電磁波などを扱う技術である．信号を変換することによって，信号の中に含まれる重要な情報を抽出し，ノイズ除去，予測，カテゴリ判別などに利用することが目的となる．授業においては，フーリエ変換に代表される基底による信号の表現と取り扱い，簡単なフィルタの理論を学ぶ．</description>
+    </item>
+    
+    <item>
+      <title>Information geometry of U-Boost and Bregman divergence</title>
+      <link>https://noboru-murata.github.io/publications/u-boost/</link>
+      <pubDate>Thu, 01 Jul 2004 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/u-boost/</guid>
+      <description>Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S._Neural Computation_Volume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
+ We aim at an extension of AdaBoost to U-Boost, in the paradigm to build a stronger classification machine from a set of weak learning machines. A geometric understanding of the Bregman divergence defined by a generic convex function U leads to the U-Boost method in the framework of information geometry extended to the space of the finite measures over a label set.</description>
+    </item>
+    
+    <item>
+      <title>確率・統計 (前期火曜1限)</title>
+      <link>https://noboru-murata.github.io/lectures/probability-statistics/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/probability-statistics/</guid>
+      <description>システム制御や信号処理，あるいは機械学習といった分野では，雑音や誤差を含んで観測される信号に基づいて様々な処理を行う場面が多い．不確定性を伴なって観測されるデータを記述するための道具立てとして確率論と統計学があるが，本講義では多くの工学分野で必要とされる確率・統計について基本的な考え方を学んでもらう．まずはじめに測度論に基づいた確率論を概説し，数学的な枠組に慣れてもらう．その後統計的な手法として，推定論と検定論の基礎を学んでもらう．</description>
+    </item>
+    
+    <item>
+      <title>An approach to blind source separation based on temporal structure of speech signals</title>
+      <link>https://noboru-murata.github.io/publications/blind-separation/</link>
+      <pubDate>Mon, 01 Jan 2001 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/blind-separation/</guid>
+      <description>Murata, N., Ikeda, S., Ziehe, A._Neurocomputing_Volume 41, Issue 1-4, 2001, Pages 1-24https://doi.org/10.1016/S0925-2312(00)00345-3
+ In this paper, we introduce a new technique for blind source separation of speech signals. We focus on the temporal structure of the signals. The idea is to apply the decorrelation method proposed by Molgedey and Schuster in the time-frequency domain. Since we are applying separation algorithm on each frequency separately, we have to solve the amplitude and permutation ambiguity properly to reconstruct the separated signals.</description>
+    </item>
+    
+    <item>
+      <title>An integral representation of functions using three-layered networks and their approximation bounds</title>
+      <link>https://noboru-murata.github.io/publications/ingegral-representation/</link>
+      <pubDate>Thu, 01 Aug 1996 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/ingegral-representation/</guid>
+      <description>Murata, N._Neural Networks_Volume 9, Issue 6, August 1996, Pages 947-956https://doi.org/10.1016/0893-6080(96)00000-7
+ Neural networks are widely known to provide a method of approximating nonlinear functions. In order to clarify its approximation ability, a new theorem on an integral transform of ridge functions is presented. By using this theorem, an approximation bound, which evaluates the quantitative relationship between the approximation accuracy and the number of elements in the hidden layer, can be obtained.</description>
+    </item>
+    
+    <item>
+      <title>Network Information Criterion—Determining the number of hidden units for an artificial neural network model</title>
+      <link>https://noboru-murata.github.io/publications/network-information-criterion/</link>
+      <pubDate>Tue, 01 Nov 1994 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/network-information-criterion/</guid>
+      <description>Murata, N., Yoshizawa, S., Amari, S._IEEE Transactions on Neural Networks_Volume 5, Issue 6, November 1994, Pages 865-872https://doi.org/10.1109/72.329683
+ The problem of model selection, or determination of the number of hidden units, can be approached statistically, by generalizing Akaike’s information criterion (AIC) to be applicable to unfaithful (i.e., unrealizable) models with general loss criteria including regularization terms. The relation between the training error and the generalization error is studied in terms of the number of the training examples and the complexity of a network which reduces to the number of parameters in the ordinary statistical theory of the AIC.</description>
+    </item>
+    
+  </channel>
+</rss>

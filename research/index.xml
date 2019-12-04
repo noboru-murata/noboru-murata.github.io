@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Noboru Murata</title>
+    <link>https://noboru-murata.github.io/research/</link>
+    <description>Recent content in Research on Noboru Murata</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Thu, 01 Aug 2019 09:54:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://noboru-murata.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Information Geometry</title>
+      <link>https://noboru-murata.github.io/research/information-geometry/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+    <item>
+      <title>Biological Data Analysis</title>
+      <link>https://noboru-murata.github.io/research/biological-data/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/biological-data/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+    <item>
+      <title>Statistical Machine Learning</title>
+      <link>https://noboru-murata.github.io/research/machine-learning/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
+      <description>coming soon. </description>
+    </item>
+    
+  </channel>
+</rss>
