@@ -29,7 +29,7 @@
       
       <guid>https://noboru-murata.github.io/publications/unbounded-activation/</guid>
       <description>Sonoda S., Murata, N._Applied and Computational Harmonic Analysis_Volume 43, Issue 2, September 2017, Pages 233-268https://doi.org/10.1016/j.acha.2015.12.005
- This paper presents an investigation of the approximation property of neural networks with unbounded activation functions, such as the rectified linear unit (ReLU), which is the new de-facto standard of deep learning. The ReLU network can be analyzed by the ridgelet transform with respect to Lizorkin distributions. By showing three reconstruction formulas by using the Fourier slice theorem, the Radon transform, and Parseval&#39;s relation, it is shown that a neural network with unbounded activation functions still satisfies the universal approximation property.</description>
+ This paper presents an investigation of the approximation property of neural networks with unbounded activation functions, such as the rectified linear unit (ReLU), which is the new de-facto standard of deep learning. The ReLU network can be analyzed by the ridgelet transform with respect to Lizorkin distributions. By showing three reconstruction formulas by using the Fourier slice theorem, the Radon transform, and Parseval&amp;rsquo;s relation, it is shown that a neural network with unbounded activation functions still satisfies the universal approximation property.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@
       
       <guid>https://noboru-murata.github.io/publications/geometric-bradley-terry/</guid>
       <description>Fujimoto, Y., Hino, H., Murata, N._Neural Computation_Volume 23, Issue 6, June 2011, Pages 1623-1659https://doi.org/10.1162/NECO%5Fa%5F00129
- The Bradley-Terry model is a statistical representation for one&#39;s preference or ranking data by using pairwise comparison results of items. For estimation of the model, several methods based on the sum of weighted Kullback-Leibler divergences have been proposed from various contexts. The purpose of this letter is to interpret an estimation mechanism of the Bradley-Terry model from the viewpoint of flatness, a fundamental notion used in information geometry.</description>
+ The Bradley-Terry model is a statistical representation for one&amp;rsquo;s preference or ranking data by using pairwise comparison results of items. For estimation of the model, several methods based on the sum of weighted Kullback-Leibler divergences have been proposed from various contexts. The purpose of this letter is to interpret an estimation mechanism of the Bradley-Terry model from the viewpoint of flatness, a fundamental notion used in information geometry.</description>
     </item>
     
     <item>
