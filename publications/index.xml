@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 01 Aug 2019 09:54:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://noboru-murata.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Aug 2019 09:54:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Estimation of neural connections from partially observed neural spikes</title>
       <link>https://noboru-murata.github.io/publications/spike-train/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/spike-train/</guid>
-      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N._Neural Networks_Volume 108, December 2018, Pages 172-191https://doi.org/10.1016/j.neunet.2018.07.019
+      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N.Neural NetworksVolume 108, December 2018, Pages 172-191https://doi.org/10.1016/j.neunet.2018.07.019
  Plasticity is one of the most important properties of the nervous system, which enables animals to adjust their behavior to the ever-changing external environment. Changes in synaptic efficacy between neurons constitute one of the major mechanisms of plasticity. Therefore, estimation of neural connections is crucial for investigating information processing in the brain. Although many analysis methods have been proposed for this purpose, most of them suffer from one or all the following mathematical difficulties: (1) only partially observed neural activity is available; (2) correlations can include both direct and indirect pseudo-interactions; and (3) biological evidence that a neuron typically has only one type of connection (excitatory or inhibitory) should be considered.</description>
     </item>
     
@@ -28,7 +24,7 @@
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/unbounded-activation/</guid>
-      <description>Sonoda S., Murata, N._Applied and Computational Harmonic Analysis_Volume 43, Issue 2, September 2017, Pages 233-268https://doi.org/10.1016/j.acha.2015.12.005
+      <description>Sonoda S., Murata, N.Applied and Computational Harmonic AnalysisVolume 43, Issue 2, September 2017, Pages 233-268https://doi.org/10.1016/j.acha.2015.12.005
  This paper presents an investigation of the approximation property of neural networks with unbounded activation functions, such as the rectified linear unit (ReLU), which is the new de-facto standard of deep learning. The ReLU network can be analyzed by the ridgelet transform with respect to Lizorkin distributions. By showing three reconstruction formulas by using the Fourier slice theorem, the Radon transform, and Parseval&amp;rsquo;s relation, it is shown that a neural network with unbounded activation functions still satisfies the universal approximation property.</description>
     </item>
     
@@ -38,7 +34,7 @@
       <pubDate>Wed, 01 Jun 2011 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/geometric-bradley-terry/</guid>
-      <description>Fujimoto, Y., Hino, H., Murata, N._Neural Computation_Volume 23, Issue 6, June 2011, Pages 1623-1659https://doi.org/10.1162/NECO%5Fa%5F00129
+      <description>Fujimoto, Y., Hino, H., Murata, N.Neural ComputationVolume 23, Issue 6, June 2011, Pages 1623-1659https://doi.org/10.1162/NECO%5Fa%5F00129
  The Bradley-Terry model is a statistical representation for one&amp;rsquo;s preference or ranking data by using pairwise comparison results of items. For estimation of the model, several methods based on the sum of weighted Kullback-Leibler divergences have been proposed from various contexts. The purpose of this letter is to interpret an estimation mechanism of the Bradley-Terry model from the viewpoint of flatness, a fundamental notion used in information geometry.</description>
     </item>
     
@@ -48,7 +44,7 @@
       <pubDate>Thu, 01 Jul 2004 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/u-boost/</guid>
-      <description>Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S._Neural Computation_Volume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
+      <description>Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S.Neural ComputationVolume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
  We aim at an extension of AdaBoost to U-Boost, in the paradigm to build a stronger classification machine from a set of weak learning machines. A geometric understanding of the Bregman divergence defined by a generic convex function U leads to the U-Boost method in the framework of information geometry extended to the space of the finite measures over a label set.</description>
     </item>
     
@@ -58,7 +54,7 @@
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/blind-separation/</guid>
-      <description>Murata, N., Ikeda, S., Ziehe, A._Neurocomputing_Volume 41, Issue 1-4, 2001, Pages 1-24https://doi.org/10.1016/S0925-2312(00)00345-3
+      <description>Murata, N., Ikeda, S., Ziehe, A.NeurocomputingVolume 41, Issue 1-4, 2001, Pages 1-24https://doi.org/10.1016/S0925-2312(00)00345-3
  In this paper, we introduce a new technique for blind source separation of speech signals. We focus on the temporal structure of the signals. The idea is to apply the decorrelation method proposed by Molgedey and Schuster in the time-frequency domain. Since we are applying separation algorithm on each frequency separately, we have to solve the amplitude and permutation ambiguity properly to reconstruct the separated signals.</description>
     </item>
     
@@ -68,7 +64,7 @@
       <pubDate>Thu, 01 Aug 1996 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/ingegral-representation/</guid>
-      <description>Murata, N._Neural Networks_Volume 9, Issue 6, August 1996, Pages 947-956https://doi.org/10.1016/0893-6080(96)00000-7
+      <description>Murata, N.Neural NetworksVolume 9, Issue 6, August 1996, Pages 947-956https://doi.org/10.1016/0893-6080(96)00000-7
  Neural networks are widely known to provide a method of approximating nonlinear functions. In order to clarify its approximation ability, a new theorem on an integral transform of ridge functions is presented. By using this theorem, an approximation bound, which evaluates the quantitative relationship between the approximation accuracy and the number of elements in the hidden layer, can be obtained.</description>
     </item>
     
@@ -78,7 +74,7 @@
       <pubDate>Tue, 01 Nov 1994 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/network-information-criterion/</guid>
-      <description>Murata, N., Yoshizawa, S., Amari, S._IEEE Transactions on Neural Networks_Volume 5, Issue 6, November 1994, Pages 865-872https://doi.org/10.1109/72.329683
+      <description>Murata, N., Yoshizawa, S., Amari, S.IEEE Transactions on Neural NetworksVolume 5, Issue 6, November 1994, Pages 865-872https://doi.org/10.1109/72.329683
  The problem of model selection, or determination of the number of hidden units, can be approached statistically, by generalizing Akaike’s information criterion (AIC) to be applicable to unfaithful (i.e., unrealizable) models with general loss criteria including regularization terms. The relation between the training error and the generalization error is studied in terms of the number of the training examples and the complexity of a network which reduces to the number of parameters in the ordinary statistical theory of the AIC.</description>
     </item>
     

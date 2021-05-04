@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vitae</title>
       <link>https://noboru-murata.github.io/vitae/</link>
@@ -58,7 +54,7 @@ brew install hugo Hugo theme hello friend NG  [ Hello Friend NG ] is a simple th
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/spike-train/</guid>
-      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N._Neural Networks_Volume 108, December 2018, Pages 172-191https://doi.org/10.1016/j.neunet.2018.07.019
+      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N.Neural NetworksVolume 108, December 2018, Pages 172-191https://doi.org/10.1016/j.neunet.2018.07.019
  Plasticity is one of the most important properties of the nervous system, which enables animals to adjust their behavior to the ever-changing external environment. Changes in synaptic efficacy between neurons constitute one of the major mechanisms of plasticity. Therefore, estimation of neural connections is crucial for investigating information processing in the brain. Although many analysis methods have been proposed for this purpose, most of them suffer from one or all the following mathematical difficulties: (1) only partially observed neural activity is available; (2) correlations can include both direct and indirect pseudo-interactions; and (3) biological evidence that a neuron typically has only one type of connection (excitatory or inhibitory) should be considered.</description>
     </item>
     
@@ -87,7 +83,7 @@ brew install hugo Hugo theme hello friend NG  [ Hello Friend NG ] is a simple th
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/unbounded-activation/</guid>
-      <description>Sonoda S., Murata, N._Applied and Computational Harmonic Analysis_Volume 43, Issue 2, September 2017, Pages 233-268https://doi.org/10.1016/j.acha.2015.12.005
+      <description>Sonoda S., Murata, N.Applied and Computational Harmonic AnalysisVolume 43, Issue 2, September 2017, Pages 233-268https://doi.org/10.1016/j.acha.2015.12.005
  This paper presents an investigation of the approximation property of neural networks with unbounded activation functions, such as the rectified linear unit (ReLU), which is the new de-facto standard of deep learning. The ReLU network can be analyzed by the ridgelet transform with respect to Lizorkin distributions. By showing three reconstruction formulas by using the Fourier slice theorem, the Radon transform, and Parseval&amp;rsquo;s relation, it is shown that a neural network with unbounded activation functions still satisfies the universal approximation property.</description>
     </item>
     
