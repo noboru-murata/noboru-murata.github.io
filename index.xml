@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vitae</title>
       <link>https://noboru-murata.github.io/vitae/</link>
@@ -33,10 +33,23 @@ brew install hugo Hugo theme hello friend NG  [ Hello Friend NG ] is a simple th
     <item>
       <title>統計データ解析 (前期・後期金曜5限)</title>
       <link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/lectures/statistical-data-analysis/</guid>
-      <description>coming soon. </description>
+      <description>本講義は 数理・情報教育研究センター のプログラムの一環です．
+統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．
+ 講義資料  統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．
+ 講義資料  </description>
+    </item>
+    
+    <item>
+      <title>Single-molecule localization by voxel-wise regression using convolutional neural network</title>
+      <link>https://noboru-murata.github.io/publications/cnn-smlm/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/cnn-smlm/</guid>
+      <description>Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N.Results in OpticsVolume 1, November 2020, 100019https://doi.org/10.1016/j.rio.2020.100019
+ Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space.</description>
     </item>
     
     <item>
@@ -61,7 +74,7 @@ brew install hugo Hugo theme hello friend NG  [ Hello Friend NG ] is a simple th
     <item>
       <title>多変量解析 (後期火曜1限)</title>
       <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
       <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．また，各手法の考え方を身に付けていくために，統計用の計算機言語Rを使用した実データの分析を演習として行う．
@@ -90,19 +103,10 @@ brew install hugo Hugo theme hello friend NG  [ Hello Friend NG ] is a simple th
     <item>
       <title>情報学習論 (前期月曜3限)</title>
       <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0900</pubDate>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
       <description>与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．</description>
-    </item>
-    
-    <item>
-      <title>Statistical Machine Learning</title>
-      <link>https://noboru-murata.github.io/research/machine-learning/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
-      <description>coming soon. </description>
     </item>
     
   </channel>
