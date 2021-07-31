@@ -23,7 +23,8 @@
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/research/biological-data/</guid>
-      <description>coming soon.  </description>
+      <description>Biological system can be regarded as a high-dimensional dynamical system with a complex structure. There are only a few variables that can be observed externally in a noisy and uncertain environment. In many cases, there is a large discrepancy between what we want to know and what we can measure.
+The key issue is how to model the generation mechanism of observable data in a concise manner with essential parts of the structure we want to know, and to devise a method to estimate unknown parameters efficiently and accurately.</description>
     </item>
     
     <item>
