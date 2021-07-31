@@ -23,7 +23,7 @@
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/research/biological-data/</guid>
-      <description>coming soon. </description>
+      <description>coming soon. test</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       <pubDate>Sun, 01 Sep 2019 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
-      <description>coming soon. this is a test.   #the-canvas { border: 1px solid black; direction: ltr; width: 100%; height: auto; } #paginator{ text-align: center; margin-bottom: 10px; }  Previous Next &amp;nbsp; &amp;nbsp; Page:  /     window.onload = function() { var url = &#39;.\/pdfs\/brand-share.pdf&#39;; var hidePaginator = &#34;&#34;; var pdfjsLib = window[&#39;pdfjs-dist/build/pdf&#39;]; pdfjsLib.GlobalWorkerOptions.workerSrc = &#39;/js/pdf-js/build/pdf.worker.js&#39;; var pdfDoc = null, pageNum = 1, pageRendering = false, pageNumPending = null, scale = 3, canvas = document.</description>
+      <description>coming soon. </description>
     </item>
     
   </channel>
