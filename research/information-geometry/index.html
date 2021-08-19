@@ -5,9 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="[Noboru Murata]">
-<meta name="description" content="Boosting by Well-Designed Ensemble  [ slide ]​
- Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S.Neural ComputationVolume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
-  " />
+<meta name="description" content="Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
+Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -44,27 +43,24 @@
 
 
 <meta itemprop="name" content="Information Geometry">
-<meta itemprop="description" content="Boosting by Well-Designed Ensemble  [ slide ]​
- Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S.Neural ComputationVolume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
-  "><meta itemprop="datePublished" content="2019-09-01T00:00:00+09:00" />
+<meta itemprop="description" content="Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
+Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner."><meta itemprop="datePublished" content="2019-09-01T00:00:00+09:00" />
 <meta itemprop="dateModified" content="2019-09-01T00:00:00+09:00" />
-<meta itemprop="wordCount" content="23"><meta itemprop="image" content="https://noboru-murata.github.io/"/>
+<meta itemprop="wordCount" content="158"><meta itemprop="image" content="https://noboru-murata.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://noboru-murata.github.io/"/>
 
 <meta name="twitter:title" content="Information Geometry"/>
-<meta name="twitter:description" content="Boosting by Well-Designed Ensemble  [ slide ]​
- Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S.Neural ComputationVolume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
-  "/>
+<meta name="twitter:description" content="Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
+Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner."/>
 
 
 
 
     <meta property="og:title" content="Information Geometry" />
-<meta property="og:description" content="Boosting by Well-Designed Ensemble  [ slide ]​
- Murata, N., Takenouchi, T., Kanamori, T., Eguchi, S.Neural ComputationVolume 16, Issue 7, July 2004, Pages 1437-1481https://doi.org/10.1162/089976604323057452
-  " />
+<meta property="og:description" content="Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
+Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://noboru-murata.github.io/research/information-geometry/" /><meta property="og:image" content="https://noboru-murata.github.io/"/><meta property="article:section" content="research" />
 <meta property="article:published_time" content="2019-09-01T00:00:00+09:00" />
@@ -150,7 +146,21 @@
             
 
             <div class="post-content">
-                <h2 id="boosting-by-well-designed-ensemble">Boosting by Well-Designed Ensemble</h2>
+                <p>Information geometry is a relatively new field of mathematical science
+that discusses geometry in the space of probability distributions, and
+uses a characteristic structure called the dual connection. By
+reconsidering the relationship between examples (data) collected
+from a certain probability distribution and a learning machine that
+models data structur in the space of probability distributions, we can discuss
+the properties of machine learning algorithms.</p>
+<h2 id="boosting-by-well-designed-ensemble">Boosting by Well-Designed Ensemble</h2>
+<p>Boosting is an algorithm specific to machine learning that efficiently
+collects weak learners and augments them into a strong learner.</p>
+<p>Each step of Boosting is the estimation of a weak learner using
+weighted data, but when reconsidered in the space of probability
+distributions, it can be understood as a special coordinate gradient descent
+method that sequentially updates a special learning model based on the
+previously acquired learner with the original data.</p>
 <p>
     <img src="/pdfs/geometry-boosting.gif"  alt="Geometric View of Boosting"  class="center"  style="border-radius: 8px;"  />
 
