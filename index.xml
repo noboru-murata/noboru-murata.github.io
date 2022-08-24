@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 May 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vitae</title>
       <link>https://noboru-murata.github.io/vitae/</link>
@@ -25,9 +25,19 @@ He was a Research Associate at the University of Tokyo, and he was a Visiting Re
       
       <guid>https://noboru-murata.github.io/about/</guid>
       <description>This site is produced and maintained by the following tools.
-Hugo  [ Hugo ] is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
- For installing on macOS, it is easy to use Homebrew.
-brew install hugo Hugo theme hello friend NG  [ Hello Friend NG ] is a simple theme for Hugo, which was inspired by the [ hello-friend ] and [ hermit ].</description>
+Hugo [ Hugo ] is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+For installing on macOS, it is easy to use Homebrew.
+brew install hugo Hugo theme hello friend NG [ Hello Friend NG ] is a simple theme for Hugo, which was inspired by the [ hello-friend ] and [ hermit ].</description>
+    </item>
+    
+    <item>
+      <title>Detecting cell assemblies by NMF-based clustering from calcium imaging data</title>
+      <link>https://noboru-murata.github.io/publications/nmf-clust/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/nmf-clust/</guid>
+      <description>Nagayama, M., Aritake, T., Hino, H., Kanda, T., Miyazaki, T., Yanagisawa, M., Akaho, S., Murata, N. Neural Networks Volume 149, May 2022, pages 29-39 https://doi.org/10.1016/j.neunet.2022.01.023
+A large number of neurons form cell assemblies that process information in the brain. Recent developments in measurement technology, one of which is calcium imaging, have made it possible to study cell assemblies. In this study, we aim to extract cell assemblies from calcium imaging data.</description>
     </item>
     
     <item>
@@ -48,18 +58,8 @@ Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine 
       <guid>https://noboru-murata.github.io/lectures/statistical-data-analysis/</guid>
       <description>本講義は 数理・情報教育研究センター のプログラムの一環です．
 統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．
- 講義資料  統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．
- 講義資料  </description>
-    </item>
-    
-    <item>
-      <title>Single-molecule localization by voxel-wise regression using convolutional neural network</title>
-      <link>https://noboru-murata.github.io/publications/cnn-smlm/</link>
-      <pubDate>Tue, 03 Nov 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/publications/cnn-smlm/</guid>
-      <description>Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N.Results in OpticsVolume 1, November 2020, 100019https://doi.org/10.1016/j.rio.2020.100019
- Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space.</description>
+講義資料 統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．
+講義資料 </description>
     </item>
     
     <item>
@@ -79,17 +79,17 @@ The key issues are how to model the generation mechanism of observable data in a
       
       <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
       <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．
- 講義資料  </description>
+講義資料 </description>
     </item>
     
     <item>
-      <title>Estimation of neural connections from partially observed neural spikes</title>
-      <link>https://noboru-murata.github.io/publications/spike-train/</link>
-      <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
+      <title>Single-molecule localization by voxel-wise regression using convolutional neural network</title>
+      <link>https://noboru-murata.github.io/publications/cnn-smlm/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://noboru-murata.github.io/publications/spike-train/</guid>
-      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N.Neural NetworksVolume 108, December 2018, Pages 172-191https://doi.org/10.1016/j.neunet.2018.07.019
- Plasticity is one of the most important properties of the nervous system, which enables animals to adjust their behavior to the ever-changing external environment. Changes in synaptic efficacy between neurons constitute one of the major mechanisms of plasticity. Therefore, estimation of neural connections is crucial for investigating information processing in the brain. Although many analysis methods have been proposed for this purpose, most of them suffer from one or all the following mathematical difficulties: (1) only partially observed neural activity is available; (2) correlations can include both direct and indirect pseudo-interactions; and (3) biological evidence that a neuron typically has only one type of connection (excitatory or inhibitory) should be considered.</description>
+      <guid>https://noboru-murata.github.io/publications/cnn-smlm/</guid>
+      <description>Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
+Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space.</description>
     </item>
     
     <item>
