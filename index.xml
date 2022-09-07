@@ -51,6 +51,16 @@ Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine 
     </item>
     
     <item>
+      <title>Biological Data Analysis</title>
+      <link>https://noboru-murata.github.io/research/biological-data/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/biological-data/</guid>
+      <description>Biological system can be regarded as a high-dimensional dynamical system with a complex structure. There are only a few variables that can be observed externally in an uncertain and noisy environment. In many cases, there is a large discrepancy between what we want to know and what we can measure.
+The key issues are how to model the generation mechanism of observable data in a way that concisely models the essential parts of the structure we want to know, and how to efficiently and accurately estimate unknown parameters.</description>
+    </item>
+    
+    <item>
       <title>統計データ解析 (前期・後期金曜5限)</title>
       <link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
@@ -63,23 +73,14 @@ Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine 
     </item>
     
     <item>
-      <title>Biological Data Analysis</title>
-      <link>https://noboru-murata.github.io/research/biological-data/</link>
+      <title>Statistical Machine Learning</title>
+      <link>https://noboru-murata.github.io/research/machine-learning/</link>
       <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
       
-      <guid>https://noboru-murata.github.io/research/biological-data/</guid>
-      <description>Biological system can be regarded as a high-dimensional dynamical system with a complex structure. There are only a few variables that can be observed externally in an uncertain and noisy environment. In many cases, there is a large discrepancy between what we want to know and what we can measure.
-The key issues are how to model the generation mechanism of observable data in a way that concisely models the essential parts of the structure we want to know, and how to efficiently and accurately estimate unknown parameters.</description>
-    </item>
-    
-    <item>
-      <title>多変量解析 (後期火曜1限)</title>
-      <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
-      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
-      <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．
-講義資料 </description>
+      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
+      <description>In statistical machine learning, we consider the problem of inferring the probability structure behind data from a relatively small number of examples. The key is how to model the probability structure that generates the data and how to efficiently solve the unknown parameters.
+We consider the properties of various learning machines, the dynamics of optimization, and the statistical properties of the estimated parameters from the standpoint of mathematical science.
+Universality of Multi-Layer Perceptron It has been proved from various points of view that the neural network is a universal function approximator that can approximate arbitrary nonlinear functions sufficiently well.</description>
     </item>
     
     <item>
@@ -93,14 +94,13 @@ Single‐molecule localization microscopy is widely used in biological research 
     </item>
     
     <item>
-      <title>Statistical Machine Learning</title>
-      <link>https://noboru-murata.github.io/research/machine-learning/</link>
-      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+      <title>多変量解析 (後期火曜1限)</title>
+      <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
       
-      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
-      <description>In statistical machine learning, we consider the problem of inferring the probability structure behind data from a relatively small number of examples. The key is how to model the probability structure that generates the data and how to efficiently solve the unknown parameters.
-We consider the properties of various learning machines, the dynamics of optimization, and the statistical properties of the estimated parameters from the standpoint of mathematical science.
-Universality of Multi-Layer Perceptron It has been proved from various points of view that the neural network is a universal function approximator that can approximate arbitrary nonlinear functions sufficiently well.</description>
+      <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
+      <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．
+講義資料 </description>
     </item>
     
     <item>
