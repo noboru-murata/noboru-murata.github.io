@@ -21,6 +21,16 @@
     </item>
     
     <item>
+      <title>多変量解析 (後期火曜1限)</title>
+      <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
+      <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．
+講義資料 </description>
+    </item>
+    
+    <item>
       <title>情報学習論 (前期月曜3限)</title>
       <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>

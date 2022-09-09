@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 01 May 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vitae</title>
       <link>https://noboru-murata.github.io/vitae/</link>
@@ -41,6 +41,16 @@ A large number of neurons form cell assemblies that process information in the b
     </item>
     
     <item>
+      <title>Information Geometry</title>
+      <link>https://noboru-murata.github.io/research/information-geometry/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
+      <description>Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
+Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner.</description>
+    </item>
+    
+    <item>
       <title>統計データ解析 (前期・後期金曜5限)</title>
       <link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
@@ -53,16 +63,6 @@ A large number of neurons form cell assemblies that process information in the b
     </item>
     
     <item>
-      <title>Information Geometry</title>
-      <link>https://noboru-murata.github.io/research/information-geometry/</link>
-      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
-      <description>Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
-Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner.</description>
-    </item>
-    
-    <item>
       <title>Biological Data Analysis</title>
       <link>https://noboru-murata.github.io/research/biological-data/</link>
       <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
@@ -70,25 +70,6 @@ Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine 
       <guid>https://noboru-murata.github.io/research/biological-data/</guid>
       <description>Biological system can be regarded as a high-dimensional dynamical system with a complex structure. There are only a few variables that can be observed externally in an uncertain and noisy environment. In many cases, there is a large discrepancy between what we want to know and what we can measure.
 The key issues are how to model the generation mechanism of observable data in a way that concisely models the essential parts of the structure we want to know, and how to efficiently and accurately estimate unknown parameters.</description>
-    </item>
-    
-    <item>
-      <title>Single-molecule localization by voxel-wise regression using convolutional neural network</title>
-      <link>https://noboru-murata.github.io/publications/cnn-smlm/</link>
-      <pubDate>Tue, 03 Nov 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/publications/cnn-smlm/</guid>
-      <description>Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
-Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space.</description>
-    </item>
-    
-    <item>
-      <title>情報学習論 (前期月曜3限)</title>
-      <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
-      <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
-      <description>与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．</description>
     </item>
     
     <item>
@@ -103,13 +84,32 @@ Universality of Multi-Layer Perceptron It has been proved from various points of
     </item>
     
     <item>
-      <title>Estimation of neural connections from partially observed neural spikes</title>
-      <link>https://noboru-murata.github.io/publications/spike-train/</link>
-      <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
+      <title>Single-molecule localization by voxel-wise regression using convolutional neural network</title>
+      <link>https://noboru-murata.github.io/publications/cnn-smlm/</link>
+      <pubDate>Tue, 03 Nov 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://noboru-murata.github.io/publications/spike-train/</guid>
-      <description>Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N. Neural Networks Volume 108, December 2018, Pages 172-191 https://doi.org/10.1016/j.neunet.2018.07.019
-Plasticity is one of the most important properties of the nervous system, which enables animals to adjust their behavior to the ever-changing external environment. Changes in synaptic efficacy between neurons constitute one of the major mechanisms of plasticity. Therefore, estimation of neural connections is crucial for investigating information processing in the brain.</description>
+      <guid>https://noboru-murata.github.io/publications/cnn-smlm/</guid>
+      <description>Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
+Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space.</description>
+    </item>
+    
+    <item>
+      <title>多変量解析 (後期火曜1限)</title>
+      <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
+      <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．
+講義資料 </description>
+    </item>
+    
+    <item>
+      <title>情報学習論 (前期月曜3限)</title>
+      <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
+      <description>与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．</description>
     </item>
     
   </channel>
