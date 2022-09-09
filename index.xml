@@ -36,7 +36,9 @@ brew install hugo Hugo theme hello friend NG [ Hello Friend NG ] is a simple the
       <pubDate>Sun, 01 May 2022 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/publications/nmf-clust/</guid>
-      <description>Nagayama, M., Aritake, T., Hino, H., Kanda, T., Miyazaki, T., Yanagisawa, M., Akaho, S., Murata, N. Neural Networks Volume 149, May 2022, pages 29-39 https://doi.org/10.1016/j.neunet.2022.01.023
+      <description>Nagayama, M., Aritake, T., Hino, H., Kanda, T., Miyazaki, T., Yanagisawa, M., Akaho, S., Murata, N. Neural Networks Volume 149, May 2022, pages 29-39
+https://doi.org/10.1016/j.neunet.2022.01.023
+https://www.scopus.com/record/display.uri?eid=2-s2.0-85125870491
 A large number of neurons form cell assemblies that process information in the brain. Recent developments in measurement technology, one of which is calcium imaging, have made it possible to study cell assemblies. In this study, we aim to extract cell assemblies from calcium imaging data.</description>
     </item>
     
