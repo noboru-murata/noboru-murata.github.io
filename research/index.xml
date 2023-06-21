@@ -31,7 +31,7 @@ The key issues are how to model the generation mechanism of observable data in a
     <item>
       <title>Statistical Machine Learning</title>
       <link>https://noboru-murata.github.io/research/machine-learning/</link>
-      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
       <description>In statistical machine learning, we consider the problem of inferring the probability structure behind data from a relatively small number of examples. The key is how to model the probability structure that generates the data and how to efficiently solve the unknown parameters.

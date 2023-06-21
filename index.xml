@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jun 2023 00:00:00 +0900</lastBuildDate><atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vitae</title>
       <link>https://noboru-murata.github.io/vitae/</link>
@@ -93,23 +93,23 @@ Single‐molecule localization microscopy is widely used in biological research 
     </item>
     
     <item>
+      <title>Statistical Machine Learning</title>
+      <link>https://noboru-murata.github.io/research/machine-learning/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
+      <description>In statistical machine learning, we consider the problem of inferring the probability structure behind data from a relatively small number of examples. The key is how to model the probability structure that generates the data and how to efficiently solve the unknown parameters.
+We consider the properties of various learning machines, the dynamics of optimization, and the statistical properties of the estimated parameters from the standpoint of mathematical science.
+Universality of Multi-Layer Perceptron It has been proved from various points of view that the neural network is a universal function approximator that can approximate arbitrary nonlinear functions sufficiently well.</description>
+    </item>
+    
+    <item>
       <title>情報学習論 (前期月曜3限)</title>
       <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
       
       <guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
       <description>与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．</description>
-    </item>
-    
-    <item>
-      <title>Statistical Machine Learning</title>
-      <link>https://noboru-murata.github.io/research/machine-learning/</link>
-      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
-      <description>In statistical machine learning, we consider the problem of inferring the probability structure behind data from a relatively small number of examples. The key is how to model the probability structure that generates the data and how to efficiently solve the unknown parameters.
-We consider the properties of various learning machines, the dynamics of optimization, and the statistical properties of the estimated parameters from the standpoint of mathematical science.
-Universality of Multi-Layer Perceptron It has been proved from various points of view that the neural network is a universal function approximator that can approximate arbitrary nonlinear functions sufficiently well.</description>
     </item>
     
   </channel>
