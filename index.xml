@@ -31,6 +31,16 @@ brew install hugo Hugo theme hello friend NG [ Hello Friend NG ] is a simple the
     </item>
     
     <item>
+      <title>Information Geometry</title>
+      <link>https://noboru-murata.github.io/research/information-geometry/</link>
+      <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
+      <description>Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
+Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner.</description>
+    </item>
+    
+    <item>
       <title>Detecting cell assemblies by NMF-based clustering from calcium imaging data</title>
       <link>https://noboru-murata.github.io/publications/nmf-clust/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0900</pubDate>
@@ -50,16 +60,6 @@ A large number of neurons form cell assemblies that process information in the b
 統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．
 講義資料 統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．
 講義資料 </description>
-    </item>
-    
-    <item>
-      <title>Information Geometry</title>
-      <link>https://noboru-murata.github.io/research/information-geometry/</link>
-      <pubDate>Thu, 19 Aug 2021 00:00:00 +0900</pubDate>
-      
-      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
-      <description>Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
-Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner.</description>
     </item>
     
     <item>
