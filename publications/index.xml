@@ -39,6 +39,16 @@ Plasticity is one of the most important properties of the nervous system, which 
     </item>
     
     <item>
+      <title>EEG dipole source localization with information criteria for multiple particle filters</title>
+      <link>https://noboru-murata.github.io/publications/eeg-dipole/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0900</pubDate>
+      
+      <guid>https://noboru-murata.github.io/publications/eeg-dipole/</guid>
+      <description>Sonoda, S., Nakamura, K., Kaneda, Y., Hino, H., Akaho, S., Murata, N., Miyauchi, E., Kawasaki, M. Neural Networks Volume 108, December 2018, Pages 68–82 https://doi.org/10.1016/j.neunet.2018.08.008
+Electroencephalography (EEG) is a non-invasive brain imaging technique that describes neural electrical activation with good temporal resolution. Source localization is required for clinical and functional interpretations of EEG signals, and most commonly is achieved via the dipole model; however, the number of dipoles in the brain should be determined for a reasonably accurate interpretation.</description>
+    </item>
+    
+    <item>
       <title>Neural network with unbounded activation functions is universal approximator</title>
       <link>https://noboru-murata.github.io/publications/unbounded-activation/</link>
       <pubDate>Fri, 01 Sep 2017 00:00:00 +0900</pubDate>
