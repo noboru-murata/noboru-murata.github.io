@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="[Noboru Murata]">
+<meta name="description" content="Sugiura, T., Murata, N. Information Geometry Volume 6, November 2023, pages 435-462 https://doi.org/10.1007/s41884-023-00114-z
+Acquiring vector representations of objects is essential for applying machine learning, statistical inference, and visualization. Although various vector acquisition methods have been proposed considering the relationship between objects in target data, most of them are supposed to use only a specific relevance level. In real-world data, however, there are cases where multiple relationships are contained between objects, such as time-varying similarity in time-series data or various weighted edges on graph-structured data." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://noboru-murata.github.io/publications/object-embed/" />
+
+
+    <title>
+        
+            Object embedding using an information geometrical perspective :: Noboru Murata  — Faculty of Science and Engineering, Waseda University
+        
+    </title>
+
+
+
+
+
+<link rel="stylesheet" href="/main.b78c3be9451dc4ca61ca377f3dc2cf2e6345a44c2bae46216a322ef366daa399.css" integrity="sha256-t4w76UUdxMphyjd/PcLPLmNFpEwrrkYhajIu82bao5k=">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Object embedding using an information geometrical perspective">
+<meta itemprop="description" content="Sugiura, T., Murata, N. Information Geometry Volume 6, November 2023, pages 435-462 https://doi.org/10.1007/s41884-023-00114-z
+Acquiring vector representations of objects is essential for applying machine learning, statistical inference, and visualization. Although various vector acquisition methods have been proposed considering the relationship between objects in target data, most of them are supposed to use only a specific relevance level. In real-world data, however, there are cases where multiple relationships are contained between objects, such as time-varying similarity in time-series data or various weighted edges on graph-structured data."><meta itemprop="datePublished" content="2023-07-21T00:00:00+09:00" />
+<meta itemprop="dateModified" content="2023-07-21T00:00:00+09:00" />
+<meta itemprop="wordCount" content="200"><meta itemprop="image" content="https://noboru-murata.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://noboru-murata.github.io/"/>
+
+<meta name="twitter:title" content="Object embedding using an information geometrical perspective"/>
+<meta name="twitter:description" content="Sugiura, T., Murata, N. Information Geometry Volume 6, November 2023, pages 435-462 https://doi.org/10.1007/s41884-023-00114-z
+Acquiring vector representations of objects is essential for applying machine learning, statistical inference, and visualization. Although various vector acquisition methods have been proposed considering the relationship between objects in target data, most of them are supposed to use only a specific relevance level. In real-world data, however, there are cases where multiple relationships are contained between objects, such as time-varying similarity in time-series data or various weighted edges on graph-structured data."/>
+
+
+
+    <meta property="og:title" content="Object embedding using an information geometrical perspective" />
+<meta property="og:description" content="Sugiura, T., Murata, N. Information Geometry Volume 6, November 2023, pages 435-462 https://doi.org/10.1007/s41884-023-00114-z
+Acquiring vector representations of objects is essential for applying machine learning, statistical inference, and visualization. Although various vector acquisition methods have been proposed considering the relationship between objects in target data, most of them are supposed to use only a specific relevance level. In real-world data, however, there are cases where multiple relationships are contained between objects, such as time-varying similarity in time-series data or various weighted edges on graph-structured data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://noboru-murata.github.io/publications/object-embed/" /><meta property="og:image" content="https://noboru-murata.github.io/"/><meta property="article:section" content="publications" />
+<meta property="article:published_time" content="2023-07-21T00:00:00+09:00" />
+<meta property="article:modified_time" content="2023-07-21T00:00:00+09:00" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-07-21 00:00:00 &#43;0900 JST" />
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://www.murata.eb.waseda.ac.jp/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text ">
+                cd ~</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/research">Research</a></li><li><a href="/publications">Publications</a></li><li><a href="/lectures">Lectures</a></li><li><a href="/vitae">Vitae</a></li><li><a href="/about">about</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://noboru-murata.github.io/publications/object-embed/">Object embedding using an information geometrical perspective</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <blockquote>
+<p>Sugiura, T., Murata, N.
+<em>Information Geometry</em>
+Volume 6, November 2023, pages 435-462
+<a href="https://doi.org/10.1007/s41884-023-00114-z">https://doi.org/10.1007/s41884-023-00114-z</a></p>
+</blockquote>
+<p>Acquiring vector representations of objects is essential for applying
+machine learning, statistical inference, and visualization. Although
+various vector acquisition methods have been proposed considering the
+relationship between objects in target data, most of them are supposed
+to use only a specific relevance level. In real-world data, however,
+there are cases where multiple relationships are contained between
+objects, such as time-varying similarity in time-series data or
+various weighted edges on graph-structured data. In this paper, a
+vector acquisition method which assigns vectors in a single coordinate
+system to objects preserving the information given by multiple
+relations between objects is proposed. In the proposed method, a
+logarithmic bilinear model parameterized by representation vectors is
+utilized for approximating relations between objects based on a
+stochastic embedding idea. The inference algorithm proposed in this
+study is interpreted in terms of information geometry: the
+m-projection from the probability distribution constructed from
+observed relations on the model manifold and the e-mixture in the
+model manifold are alternately repeated to estimate the
+parameters. Finally, the performance of the proposed method is
+evaluated using artificial data, and a case study is conducted using
+real data.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; true</span>
+            <span><a href="https://noboru-murata.github.io/"></a></span>
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.0931a358499291afca6f741478e9fc9fa973a9fbd7aeb3390f3b10463966dc8195daf98a0e33685a1fbfb9d7578631c3f31fc8e558eaf6e2c30c4c3e14df4931.js" integrity="sha512-CTGjWEmSka/Kb3QUeOn8n6lzqfvXrrM5DzsQRjlm3IGV2vmKDjNoWh&#43;/uddXhjHD8x/I5Vjq9uLDDEw&#43;FN9JMQ=="></script>
+
+
+
+    </body>
+</html>
