@@ -4,7 +4,7 @@
     <title>Noboru Murata</title>
     <link>https://noboru-murata.github.io/</link>
     <description>Recent content on Noboru Murata</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0900</lastBuildDate>
@@ -14,84 +14,70 @@
       <link>https://noboru-murata.github.io/vitae/</link>
       <pubDate>Thu, 01 Aug 2019 09:54:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/vitae/</guid>
-      <description>Biography Noboru Murata received the B. Eng., M. Eng. and Dr. Eng in Mathematical Engineering and Information Physics from the University of Tokyo in 1987, 1989 and 1992, respectively.
-He was a Research Associate at the University of Tokyo, and he was a Visiting Research with the Research Institute for Computer Architecture and Software Technology of German National Research Center for Information Technology (GMD FIRST) from 1995 to 1996 supported by Alexander von Humboldt Foundation.</description>
+      <description>&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;&#xA;&lt;p&gt;Noboru Murata received the B. Eng., M. Eng. and Dr. Eng in&#xA;Mathematical Engineering and Information Physics from the&#xA;University of Tokyo in 1987, 1989 and 1992, respectively.&lt;/p&gt;&#xA;&lt;p&gt;He was a Research Associate at the University of Tokyo, and he was&#xA;a Visiting Research with the Research Institute for Computer&#xA;Architecture and Software Technology of German National Research&#xA;Center for Information Technology (GMD FIRST) from 1995 to 1996&#xA;supported by Alexander von Humboldt Foundation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>about this site</title>
       <link>https://noboru-murata.github.io/about/</link>
       <pubDate>Thu, 01 Aug 2019 09:54:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/about/</guid>
-      <description>This site is produced and maintained by the following tools.
-Hugo [ Hugo ] is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
-For installing on macOS, it is easy to use Homebrew.
-brew install hugo Hugo theme hello friend NG [ Hello Friend NG ] is a simple theme for Hugo, which was inspired by the [ hello-friend ] and [ hermit ].</description>
+      <description>&lt;p&gt;This site is produced and maintained by the following tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[ &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; ]&#xA;is one of the most popular open-source static site&#xA;generators. With its amazing speed and flexibility, Hugo makes&#xA;building websites fun again.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;For installing on macOS, it is easy to use Homebrew.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hugo-theme-hello-friend-ng&#34;&gt;Hugo theme hello friend NG&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[ &lt;a href=&#34;https://themes.gohugo.io/hugo-theme-hello-friend-ng/&#34;&gt;Hello Friend NG&lt;/a&gt; ]&#xA;is a simple theme for Hugo,&#xA;which was inspired by the&#xA;[ &lt;a href=&#34;https://themes.gohugo.io/hugo-theme-hello-friend/&#34;&gt;hello-friend&lt;/a&gt; ]&#xA;and&#xA;[ &lt;a href=&#34;https://themes.gohugo.io/hermit/&#34;&gt;hermit&lt;/a&gt; ].&lt;/p&gt;</description>
     </item>
     <item>
       <title>Object embedding using an information geometrical perspective</title>
       <link>https://noboru-murata.github.io/publications/object-embed/</link>
       <pubDate>Fri, 21 Jul 2023 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/publications/object-embed/</guid>
-      <description>Sugiura, T., Murata, N. Information Geometry Volume 6, November 2023, pages 435-462 https://doi.org/10.1007/s41884-023-00114-z
-Acquiring vector representations of objects is essential for applying machine learning, statistical inference, and visualization. Although various vector acquisition methods have been proposed considering the relationship between objects in target data, most of them are supposed to use only a specific relevance level. In real-world data, however, there are cases where multiple relationships are contained between objects, such as time-varying similarity in time-series data or various weighted edges on graph-structured data.</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Sugiura, T., Murata, N.&#xA;&lt;em&gt;Information Geometry&lt;/em&gt;&#xA;Volume 6, November 2023, pages 435-462&#xA;&lt;a href=&#34;https://doi.org/10.1007/s41884-023-00114-z&#34;&gt;https://doi.org/10.1007/s41884-023-00114-z&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Acquiring vector representations of objects is essential for applying&#xA;machine learning, statistical inference, and visualization. Although&#xA;various vector acquisition methods have been proposed considering the&#xA;relationship between objects in target data, most of them are supposed&#xA;to use only a specific relevance level. In real-world data, however,&#xA;there are cases where multiple relationships are contained between&#xA;objects, such as time-varying similarity in time-series data or&#xA;various weighted edges on graph-structured data. In this paper, a&#xA;vector acquisition method which assigns vectors in a single coordinate&#xA;system to objects preserving the information given by multiple&#xA;relations between objects is proposed. In the proposed method, a&#xA;logarithmic bilinear model parameterized by representation vectors is&#xA;utilized for approximating relations between objects based on a&#xA;stochastic embedding idea. The inference algorithm proposed in this&#xA;study is interpreted in terms of information geometry: the&#xA;m-projection from the probability distribution constructed from&#xA;observed relations on the model manifold and the e-mixture in the&#xA;model manifold are alternately repeated to estimate the&#xA;parameters. Finally, the performance of the proposed method is&#xA;evaluated using artificial data, and a case study is conducted using&#xA;real data.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Information Geometry</title>
       <link>https://noboru-murata.github.io/research/information-geometry/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
-      <description>Information geometry is a relatively new field of mathematical science that discusses geometry in the space of probability distributions, and uses a characteristic structure called the dual connection. By reconsidering the relationship between examples (data) collected from a certain probability distribution and a learning machine that models data structur in the space of probability distributions, we can discuss the properties of machine learning algorithms.
-Boosting by Well-Designed Ensemble Boosting is an algorithm specific to machine learning that efficiently collects weak learners and augments them into a strong learner.</description>
+      <description>&lt;p&gt;Information geometry is a relatively new field of mathematical science&#xA;that discusses geometry in the space of probability distributions, and&#xA;uses a characteristic structure called the dual connection. By&#xA;reconsidering the relationship between examples (data) collected&#xA;from a certain probability distribution and a learning machine that&#xA;models data structur in the space of probability distributions, we can discuss&#xA;the properties of machine learning algorithms.&lt;/p&gt;&#xA;&lt;h2 id=&#34;boosting-by-well-designed-ensemble&#34;&gt;Boosting by Well-Designed Ensemble&lt;/h2&gt;&#xA;&lt;p&gt;Boosting is an algorithm specific to machine learning that efficiently&#xA;collects weak learners and augments them into a strong learner.&lt;/p&gt;</description>
     </item>
     <item>
       <title>統計データ解析 (前期・後期金曜5限)</title>
       <link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/lectures/statistical-data-analysis/</guid>
-      <description>本講義は 数理・情報教育研究センター のプログラムの一環です．
-統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．
-講義資料 統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．
-講義資料 </description>
+      <description>&lt;p&gt;本講義は &lt;a href=&#34;http://www.mi.u-tokyo.ac.jp/index.html&#34;&gt;数理・情報教育研究センター&lt;/a&gt; のプログラムの一環です．&lt;/p&gt;&#xA;&lt;p&gt;統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/statistical-data-analysis1&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/statistical-data-analysis2&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Biological Data Analysis</title>
       <link>https://noboru-murata.github.io/research/biological-data/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/research/biological-data/</guid>
-      <description>Biological system can be regarded as a high-dimensional dynamical system with a complex structure. There are only a few variables that can be observed externally in an uncertain and noisy environment. In many cases, there is a large discrepancy between what we want to know and what we can measure.
-The key issues are how to model the generation mechanism of observable data in a way that concisely models the essential parts of the structure we want to know, and how to efficiently and accurately estimate unknown parameters.</description>
+      <description>&lt;p&gt;Biological system can be regarded as a high-dimensional dynamical&#xA;system with a complex structure.  There are only a few variables&#xA;that can be observed externally in an uncertain and noisy&#xA;environment.  In many cases, there is a large discrepancy between&#xA;what we want to know and what we can measure.&lt;/p&gt;&#xA;&lt;p&gt;The key issues are how to model the generation mechanism of observable&#xA;data in a way that concisely models the essential parts of the&#xA;structure we want to know, and how to efficiently and accurately&#xA;estimate unknown parameters.&lt;/p&gt;</description>
     </item>
     <item>
       <title>多変量解析 (後期火曜1限)</title>
       <link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
-      <description>多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．
-講義資料 </description>
+      <description>&lt;p&gt;多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/multivariate-analysis&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Detecting cell assemblies by NMF-based clustering from calcium imaging data</title>
       <link>https://noboru-murata.github.io/publications/nmf-clust/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/publications/nmf-clust/</guid>
-      <description>Nagayama, M., Aritake, T., Hino, H., Kanda, T., Miyazaki, T., Yanagisawa, M., Akaho, S., Murata, N. Neural Networks Volume 149, May 2022, pages 29-39 https://doi.org/10.1016/j.neunet.2022.01.023
-A large number of neurons form cell assemblies that process information in the brain. Recent developments in measurement technology, one of which is calcium imaging, have made it possible to study cell assemblies. In this study, we aim to extract cell assemblies from calcium imaging data.</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Nagayama, M., Aritake, T., Hino, H., Kanda, T., Miyazaki, T., Yanagisawa, M., Akaho, S., Murata, N.&#xA;&lt;em&gt;Neural Networks&lt;/em&gt;&#xA;Volume 149, May 2022, pages 29-39&#xA;&lt;a href=&#34;https://doi.org/10.1016/j.neunet.2022.01.023&#34;&gt;https://doi.org/10.1016/j.neunet.2022.01.023&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;A large number of neurons form cell assemblies that process&#xA;information in the brain. Recent developments in measurement&#xA;technology, one of which is calcium imaging, have made it possible to&#xA;study cell assemblies. In this study, we aim to extract cell&#xA;assemblies from calcium imaging data. We propose a clustering approach&#xA;based on non-negative matrix factorization (NMF). The proposed&#xA;approach first obtains a similarity matrix between neurons by NMF and&#xA;then performs spectral clustering on it. The application of NMF&#xA;entails the problem of model selection. The number of bases in NMF&#xA;affects the result considerably, and a suitable selection method is&#xA;yet to be established. We attempt to resolve this problem by model&#xA;averaging with a newly defined estimator based on NMF. Experiments on&#xA;simulated data suggest that the proposed approach is superior to&#xA;conventional correlation-based clustering methods over a wide range of&#xA;sampling rates. We also analyzed calcium imaging data of&#xA;sleeping/waking mice and the results suggest that the size of the cell&#xA;assembly depends on the degree and spatial extent of slow wave&#xA;generation in the cerebral cortex.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Statistical Machine Learning</title>
       <link>https://noboru-murata.github.io/research/machine-learning/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
-      <description>In statistical machine learning, we consider the problem of inferring the probability structure behind data from a relatively small number of examples. The key is how to model the probability structure that generates the data and how to efficiently solve the unknown parameters.
-We consider the properties of various learning machines, the dynamics of optimization, and the statistical properties of the estimated parameters from the standpoint of mathematical science.
-Universality of Multi-Layer Perceptron It has been proved from various points of view that the neural network is a universal function approximator that can approximate arbitrary nonlinear functions sufficiently well.</description>
+      <description>&lt;p&gt;In statistical machine learning, we consider the problem of inferring&#xA;the probability structure behind data from a relatively small number&#xA;of examples. The key is how to model the probability structure that&#xA;generates the data and how to efficiently solve the unknown&#xA;parameters.&lt;/p&gt;&#xA;&lt;p&gt;We consider the properties of various learning machines, the dynamics&#xA;of optimization, and the statistical properties of the estimated&#xA;parameters from the standpoint of mathematical science.&lt;/p&gt;&#xA;&lt;h2 id=&#34;universality-of-multi-layer-perceptron&#34;&gt;Universality of Multi-Layer Perceptron&lt;/h2&gt;&#xA;&lt;p&gt;It has been proved from various points of view that the neural network&#xA;is a universal function approximator that can approximate arbitrary&#xA;nonlinear functions sufficiently well. We clarify the class of&#xA;functions that can be represented by the neural network based on the&#xA;integral representation (Ridgelet transform), and investigate the&#xA;relationship between the accuracy of approximation by finite sums and&#xA;the integral representation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>情報学習論 (前期月曜3限)</title>
       <link>https://noboru-murata.github.io/lectures/machine-learning/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0900</pubDate>
       <guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
-      <description>与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．</description>
+      <description>&lt;p&gt;与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
