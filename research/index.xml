@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Research on Noboru Murata</title>
-    <link>https://noboru-murata.github.io/research/</link>
+    <link>http://localhost:1313/research/</link>
     <description>Recent content in Research on Noboru Murata</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>en-US</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 21 Jun 2023 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://noboru-murata.github.io/research/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Information Geometry</title>
-      <link>https://noboru-murata.github.io/research/information-geometry/</link>
+      <link>http://localhost:1313/research/information-geometry/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://noboru-murata.github.io/research/information-geometry/</guid>
+      <guid>http://localhost:1313/research/information-geometry/</guid>
       <description>&lt;p&gt;Information geometry is a relatively new field of mathematical science&#xA;that discusses geometry in the space of probability distributions, and&#xA;uses a characteristic structure called the dual connection. By&#xA;reconsidering the relationship between examples (data) collected&#xA;from a certain probability distribution and a learning machine that&#xA;models data structur in the space of probability distributions, we can discuss&#xA;the properties of machine learning algorithms.&lt;/p&gt;&#xA;&lt;h2 id=&#34;boosting-by-well-designed-ensemble&#34;&gt;Boosting by Well-Designed Ensemble&lt;/h2&gt;&#xA;&lt;p&gt;Boosting is an algorithm specific to machine learning that efficiently&#xA;collects weak learners and augments them into a strong learner.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Biological Data Analysis</title>
-      <link>https://noboru-murata.github.io/research/biological-data/</link>
+      <link>http://localhost:1313/research/biological-data/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://noboru-murata.github.io/research/biological-data/</guid>
+      <guid>http://localhost:1313/research/biological-data/</guid>
       <description>&lt;p&gt;Biological system can be regarded as a high-dimensional dynamical&#xA;system with a complex structure.  There are only a few variables&#xA;that can be observed externally in an uncertain and noisy&#xA;environment.  In many cases, there is a large discrepancy between&#xA;what we want to know and what we can measure.&lt;/p&gt;&#xA;&lt;p&gt;The key issues are how to model the generation mechanism of observable&#xA;data in a way that concisely models the essential parts of the&#xA;structure we want to know, and how to efficiently and accurately&#xA;estimate unknown parameters.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Statistical Machine Learning</title>
-      <link>https://noboru-murata.github.io/research/machine-learning/</link>
+      <link>http://localhost:1313/research/machine-learning/</link>
       <pubDate>Wed, 21 Jun 2023 00:00:00 +0900</pubDate>
-      <guid>https://noboru-murata.github.io/research/machine-learning/</guid>
+      <guid>http://localhost:1313/research/machine-learning/</guid>
       <description>&lt;p&gt;In statistical machine learning, we consider the problem of inferring&#xA;the probability structure behind data from a relatively small number&#xA;of examples. The key is how to model the probability structure that&#xA;generates the data and how to efficiently solve the unknown&#xA;parameters.&lt;/p&gt;&#xA;&lt;p&gt;We consider the properties of various learning machines, the dynamics&#xA;of optimization, and the statistical properties of the estimated&#xA;parameters from the standpoint of mathematical science.&lt;/p&gt;&#xA;&lt;h2 id=&#34;universality-of-multi-layer-perceptron&#34;&gt;Universality of Multi-Layer Perceptron&lt;/h2&gt;&#xA;&lt;p&gt;It has been proved from various points of view that the neural network&#xA;is a universal function approximator that can approximate arbitrary&#xA;nonlinear functions sufficiently well. We clarify the class of&#xA;functions that can be represented by the neural network based on the&#xA;integral representation (Ridgelet transform), and investigate the&#xA;relationship between the accuracy of approximation by finite sums and&#xA;the integral representation.&lt;/p&gt;</description>
     </item>
   </channel>
