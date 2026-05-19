@@ -2,85 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/vitae/</loc>
+    <loc>https://noboru-murata.github.io/vitae/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://noboru-murata.github.io/about/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/</loc>
+    <loc>https://noboru-murata.github.io/research/</loc>
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/lectures/</loc>
+    <loc>https://noboru-murata.github.io/lectures/</loc>
     <lastmod>2021-04-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/</loc>
+    <loc>https://noboru-murata.github.io/publications/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/object-embed/</loc>
+    <loc>https://noboru-murata.github.io/publications/object-embed/</loc>
     <lastmod>2023-07-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/information-geometry/</loc>
+    <loc>https://noboru-murata.github.io/research/information-geometry/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/lectures/statistical-data-analysis/</loc>
+    <loc>https://noboru-murata.github.io/lectures/statistical-data-analysis/</loc>
     <lastmod>2022-04-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/biological-data/</loc>
+    <loc>https://noboru-murata.github.io/research/biological-data/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/lectures/multivariate-analysis/</loc>
+    <loc>https://noboru-murata.github.io/lectures/multivariate-analysis/</loc>
     <lastmod>2022-09-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/nmf-clust/</loc>
+    <loc>https://noboru-murata.github.io/publications/nmf-clust/</loc>
     <lastmod>2022-05-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/machine-learning/</loc>
+    <loc>https://noboru-murata.github.io/research/machine-learning/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/lectures/machine-learning/</loc>
+    <loc>https://noboru-murata.github.io/lectures/machine-learning/</loc>
     <lastmod>2022-04-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/cnn-smlm/</loc>
+    <loc>https://noboru-murata.github.io/publications/cnn-smlm/</loc>
     <lastmod>2020-11-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/lectures/signal-processing/</loc>
+    <loc>https://noboru-murata.github.io/lectures/signal-processing/</loc>
     <lastmod>2022-04-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/spike-train/</loc>
+    <loc>https://noboru-murata.github.io/publications/spike-train/</loc>
     <lastmod>2018-12-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/lectures/probability-statistics/</loc>
+    <loc>https://noboru-murata.github.io/lectures/probability-statistics/</loc>
     <lastmod>2022-04-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/eeg-dipole/</loc>
+    <loc>https://noboru-murata.github.io/publications/eeg-dipole/</loc>
     <lastmod>2018-12-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/unbounded-activation/</loc>
+    <loc>https://noboru-murata.github.io/publications/unbounded-activation/</loc>
     <lastmod>2017-09-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/geometric-bradley-terry/</loc>
+    <loc>https://noboru-murata.github.io/publications/geometric-bradley-terry/</loc>
     <lastmod>2011-06-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/u-boost/</loc>
+    <loc>https://noboru-murata.github.io/publications/u-boost/</loc>
     <lastmod>2004-07-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/blind-separation/</loc>
+    <loc>https://noboru-murata.github.io/publications/blind-separation/</loc>
     <lastmod>2001-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/ingegral-representation/</loc>
+    <loc>https://noboru-murata.github.io/publications/ingegral-representation/</loc>
     <lastmod>1996-08-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/publications/network-information-criterion/</loc>
+    <loc>https://noboru-murata.github.io/publications/network-information-criterion/</loc>
     <lastmod>1994-11-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://noboru-murata.github.io/</loc>
     <lastmod>2023-07-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://noboru-murata.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://noboru-murata.github.io/series/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://noboru-murata.github.io/tags/</loc>
   </url>
 </urlset>
