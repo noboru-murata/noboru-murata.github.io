@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -8,6 +9,9 @@
     <loc>https://noboru-murata.github.io/about/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
   </url><url>
+    <loc>https://noboru-murata.github.io/about.ja/</loc>
+    <lastmod>2026-06-02T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://noboru-murata.github.io/research/</loc>
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
   </url><url>
@@ -17,41 +21,41 @@
     <loc>https://noboru-murata.github.io/publications/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
   </url><url>
+    <loc>https://noboru-murata.github.io/lectures/statistical-data-analysis/</loc>
+    <lastmod>2026-04-01T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://noboru-murata.github.io/publications/object-embed/</loc>
     <lastmod>2023-07-21T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/research/information-geometry/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://noboru-murata.github.io/lectures/statistical-data-analysis/</loc>
-    <lastmod>2022-04-01T00:00:00+09:00</lastmod>
+    <loc>https://noboru-murata.github.io/lectures/multivariate-analysis/</loc>
+    <lastmod>2025-10-01T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/research/biological-data/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://noboru-murata.github.io/lectures/multivariate-analysis/</loc>
-    <lastmod>2022-09-01T00:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://noboru-murata.github.io/publications/nmf-clust/</loc>
     <lastmod>2022-05-01T00:00:00+09:00</lastmod>
   </url><url>
+    <loc>https://noboru-murata.github.io/lectures/machine-learning/</loc>
+    <lastmod>2026-04-01T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://noboru-murata.github.io/research/machine-learning/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://noboru-murata.github.io/lectures/machine-learning/</loc>
-    <lastmod>2022-04-01T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/publications/cnn-smlm/</loc>
     <lastmod>2020-11-03T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/signal-processing/</loc>
-    <lastmod>2022-04-01T00:00:00+09:00</lastmod>
+    <lastmod>2026-04-01T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/publications/spike-train/</loc>
     <lastmod>2018-12-01T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/probability-statistics/</loc>
-    <lastmod>2022-04-01T00:00:00+09:00</lastmod>
+    <lastmod>2026-04-01T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/publications/eeg-dipole/</loc>
     <lastmod>2018-12-01T00:00:00+09:00</lastmod>
@@ -75,7 +79,9 @@
     <lastmod>1994-11-01T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://noboru-murata.github.io/</loc>
-    <lastmod>2023-07-21T00:00:00+09:00</lastmod>
+    <lastmod>2026-06-02T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://noboru-murata.github.io/authors/</loc>
   </url><url>
     <loc>https://noboru-murata.github.io/categories/</loc>
   </url><url>

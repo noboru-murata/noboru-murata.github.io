@@ -1,172 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="[Noboru Murata]">
-<meta name="description" content=" Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
-Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space. Then, a deep neural network is used to solve these problems. By decomposing the regression problem, a fully convolutional neural network can be used to solve the regression problems. The computation of the network is efficient, and a simple and parameter‐free loss function can be used to train the network. The proposed algorithm is validated by both simulated and real data obtained by quad‐plane microscopy.
-" />
-<meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
-<link rel="canonical" href="https://noboru-murata.github.io/publications/cnn-smlm/" />
-
-
-    <title>
-        
-            Single-molecule localization by voxel-wise regression using convolutional neural network :: Noboru Murata  — Faculty of Science and Engineering, Waseda University
-        
-    </title>
+<head>
+  <title>
+  Single-molecule localization by voxel-wise regression using convolutional neural network · Noboru Murata
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
 
 
 
+<meta name="author" content="Noboru Murata">
+<meta name="description" content="
+Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N.
+Results in Optics
+Volume 1, November 2020, 100019
+https://doi.org/10.1016/j.rio.2020.100019
 
-  <link rel="stylesheet" href="/main.min.7289daf2e88ea2c7b253a51cc5794c7cc17e7aeb7295a19d978db764a5862f25.css" integrity="sha256-cona8uiOoseyU6UcxXlMfMF&#43;eutylaGdl423ZKWGLyU=" crossorigin="anonymous">
+Single‐molecule localization microscopy is widely used in biological
+research for measuring the nanostructures of samples smaller than the
+diffraction limit. In this paper, a novel method for regression of the
+coordinates of molecules for multifocal plane microscopy is
+presented. A regression problem for the target space is decomposed
+into regression problems for small subsets of the target space. Then,
+a deep neural network is used to solve these problems. By decomposing
+the regression problem, a fully convolutional neural network can be
+used to solve the regression problems. The computation of the network
+is efficient, and a simple and parameter‐free loss function can be
+used to train the network. The proposed algorithm is validated by both
+simulated and real data obtained by quad‐plane microscopy.">
+<meta name="keywords" content="lecture,research,personal">
 
 
 
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
-
-
-
-  <meta itemprop="name" content="Single-molecule localization by voxel-wise regression using convolutional neural network">
-  <meta itemprop="description" content="Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
-Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space. Then, a deep neural network is used to solve these problems. By decomposing the regression problem, a fully convolutional neural network can be used to solve the regression problems. The computation of the network is efficient, and a simple and parameter‐free loss function can be used to train the network. The proposed algorithm is validated by both simulated and real data obtained by quad‐plane microscopy.">
-  <meta itemprop="datePublished" content="2020-11-03T00:00:00+09:00">
-  <meta itemprop="dateModified" content="2020-11-03T00:00:00+09:00">
-  <meta itemprop="wordCount" content="144">
-  <meta itemprop="image" content="https://noboru-murata.github.io/">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://noboru-murata.github.io/">
-  <meta name="twitter:title" content="Single-molecule localization by voxel-wise regression using convolutional neural network">
-  <meta name="twitter:description" content="Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Single-molecule localization by voxel-wise regression using convolutional neural network">
+	<meta name="twitter:description" content="Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
 Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space. Then, a deep neural network is used to solve these problems. By decomposing the regression problem, a fully convolutional neural network can be used to solve the regression problems. The computation of the network is efficient, and a simple and parameter‐free loss function can be used to train the network. The proposed algorithm is validated by both simulated and real data obtained by quad‐plane microscopy.">
 
-
-
-    <meta property="og:url" content="https://noboru-murata.github.io/publications/cnn-smlm/">
-  <meta property="og:site_name" content="Noboru Murata">
-  <meta property="og:title" content="Single-molecule localization by voxel-wise regression using convolutional neural network">
-  <meta property="og:description" content="Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
+<meta property="og:url" content="https://noboru-murata.github.io/publications/cnn-smlm/">
+	<meta property="og:site_name" content="Noboru Murata">
+	<meta property="og:title" content="Single-molecule localization by voxel-wise regression using convolutional neural network">
+	<meta property="og:description" content="Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N. Results in Optics Volume 1, November 2020, 100019 https://doi.org/10.1016/j.rio.2020.100019
 Single‐molecule localization microscopy is widely used in biological research for measuring the nanostructures of samples smaller than the diffraction limit. In this paper, a novel method for regression of the coordinates of molecules for multifocal plane microscopy is presented. A regression problem for the target space is decomposed into regression problems for small subsets of the target space. Then, a deep neural network is used to solve these problems. By decomposing the regression problem, a fully convolutional neural network can be used to solve the regression problems. The computation of the network is efficient, and a simple and parameter‐free loss function can be used to train the network. The proposed algorithm is validated by both simulated and real data obtained by quad‐plane microscopy.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="publications">
-    <meta property="article:published_time" content="2020-11-03T00:00:00+09:00">
-    <meta property="article:modified_time" content="2020-11-03T00:00:00+09:00">
-    <meta property="og:image" content="https://noboru-murata.github.io/">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="publications">
+		<meta property="article:published_time" content="2020-11-03T00:00:00+09:00">
+		<meta property="article:modified_time" content="2020-11-03T00:00:00+09:00">
+
+
+
+
+<link rel="canonical" href="https://noboru-murata.github.io/publications/cnn-smlm/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2020-11-03 00:00:00 &#43;0900 JST" />
-
-
-
-
-
-
-
-
-
-
-
-
-    </head>
-
-    
-        <body>
+  
     
     
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="https://noboru-murata.github.io/" style="text-decoration: none;">
-    <div class="logo">
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://noboru-murata.github.io/">
+      Noboru Murata
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
-            <span class="logo__mark">&gt;</span>
-            <span class="logo__text ">
-                cd ~</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/research/">Research</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/publications/">Publications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/lectures/">Lectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/vitae/">Vitae</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">about</a>
+            </li>
+          
         
-    </div>
-</a>
-
-
-        <span class="header__right">
-                <nav class="menu">
-    <ul class="menu__inner">
-                <li><a href="/about">about</a></li>
-            
-                <li><a href="/lectures">Lectures</a></li>
-            
-                <li><a href="/publications">Publications</a></li>
-            
-                <li><a href="/research">Research</a></li>
-            
-                <li><a href="/vitae">Vitae</a></li>
-            
-    </ul>
+        
+      </ul>
+    
+  </section>
 </nav>
 
 
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
- </svg></span>
-        </span>
-    </span>
-</header>
-
-
-            
     <div class="content">
-        <main class="post">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://noboru-murata.github.io/publications/cnn-smlm/">
+          Single-molecule localization by voxel-wise regression using convolutional neural network
+        </a>
+      </h1>
+    </header>
 
-            <div class="post-info">
-                
-                </p>
-            </div>
-
-            <article>
-                <h2 class="post-title"><a href="https://noboru-murata.github.io/publications/cnn-smlm/">Single-molecule localization by voxel-wise regression using convolutional neural network</a></h2>
-
-                
-                
-                
-
-                <div class="post-content">
-                    <blockquote>
+    <blockquote>
 <p>Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N.
 <em>Results in Optics</em>
 Volume 1, November 2020, 100019
-<a href="https://doi.org/10.1016/j.rio.2020.100019">https://doi.org/10.1016/j.rio.2020.100019</a></p>
+<a href="https://doi.org/10.1016/j.rio.2020.100019"  class="external-link" target="_blank" rel="noopener">https://doi.org/10.1016/j.rio.2020.100019</a></p>
 </blockquote>
 <p>Single‐molecule localization microscopy is widely used in biological
 research for measuring the nanostructures of samples smaller than the
@@ -181,52 +194,76 @@ is efficient, and a simple and parameter‐free loss function can be
 used to train the network. The proposed algorithm is validated by both
 simulated and real data obtained by quad‐plane microscopy.</p>
 
-                </div>
-            </article>
+  </article>
+</section>
 
-            <hr />
+  
 
-            <div class="post-info">
-                
-                
-            </div>
-        </main>
     </div>
 
-
-            
-                <footer class="footer">
+    <footer class="footer">
+  <section class="container">
+    ©
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>&copy; true</span>
-            <span><a href="https://noboru-murata.github.io/">map[name:Noboru Murata]</a></span>
-            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            
-            
-        </div>
-    </div>
+      2019 -
     
+    2026
+     Noboru Murata 
+    ·
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
-        </div>
-    </div>
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
     
+  </section>
 </footer>
 
-            
-        </div>
+  </main>
 
-        
+  
 
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
 
+  
 
-<script type="text/javascript" src="/bundle.min.08b680078a3cf9c69e3dd217a5aa52cfddd4a1d850f8cdff127fdd7421a71f8b2b474be69386f67819edace92273916e7230c9054f38107db9dc6730b3530ab5.js" integrity="sha512-CLaAB4o8&#43;caePdIXpapSz93UodhQ&#43;M3/En/ddCGnH4srR0vmk4b2eBntrOkic5FucjDJBU84EH253Gcws1MKtQ=="></script>
+  
 
+  
 
+  
 
+  
 
-    </body>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
 </html>
