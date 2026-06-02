@@ -10,7 +10,7 @@
 		
 		
 		
-			<lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0900</lastBuildDate>
+			<lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0900</lastBuildDate>
 		
 			<atom:link href="https://noboru-murata.github.io/index.xml" rel="self" type="application/rss+xml" />
 			<item>
@@ -28,18 +28,11 @@
 				<description>&lt;p&gt;This site is produced and maintained by the following tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hugo&#34;&gt;&#xA;  Hugo&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hugo&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[ &lt;a href=&#34;https://gohugo.io&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; ]&#xA;is one of the most popular open-source static site&#xA;generators. With its amazing speed and flexibility, Hugo makes&#xA;building websites fun again.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;For installing on macOS, it is easy to use Homebrew.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hugo-theme-coder&#34;&gt;&#xA;  Hugo theme coder&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hugo-theme-coder&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[ &lt;a href=&#34;https://github.com/luizdepra/hugo-coder&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo coder&lt;/a&gt; ]&#xA;is a minimalist blog theme for hugo.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>その他</title>
-				<link>https://noboru-murata.github.io/about.ja/</link>
-				<pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
-				<guid>https://noboru-murata.github.io/about.ja/</guid>
-				<description>&lt;p&gt;This site is produced and maintained by the following tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;hugo&#34;&gt;&#xA;  Hugo&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hugo&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[ &lt;a href=&#34;https://gohugo.io&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt; ]&#xA;is one of the most popular open-source static site&#xA;generators. With its amazing speed and flexibility, Hugo makes&#xA;building websites fun again.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;For installing on macOS, it is easy to use Homebrew.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hugo-theme-coder&#34;&gt;&#xA;  Hugo theme coder&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hugo-theme-coder&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[ &lt;a href=&#34;https://github.com/luizdepra/hugo-coder&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo coder&lt;/a&gt; ]&#xA;is a minimalist blog theme for hugo.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>統計データ解析 (前期・後期金曜5限)</title>
-				<link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
+				<title>情報学習論 (前期月曜3限)</title>
+				<link>https://noboru-murata.github.io/lectures/machine-learning/</link>
 				<pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
-				<guid>https://noboru-murata.github.io/lectures/statistical-data-analysis/</guid>
-				<description>&lt;p&gt;本講義は &lt;a href=&#34;http://www.mi.u-tokyo.ac.jp/index.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数理・情報教育研究センター&lt;/a&gt; のプログラムの一環です．&lt;/p&gt;&#xA;&lt;p&gt;統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/statistical-data-analysis1&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/statistical-data-analysis2&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
+				<description>&lt;p&gt;与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Object embedding using an information geometrical perspective</title>
@@ -56,11 +49,11 @@
 				<description>&lt;p&gt;Information geometry is a relatively new field of mathematical science&#xA;that discusses geometry in the space of probability distributions, and&#xA;uses a characteristic structure called the dual connection. By&#xA;reconsidering the relationship between examples (data) collected&#xA;from a certain probability distribution and a learning machine that&#xA;models data structur in the space of probability distributions, we can discuss&#xA;the properties of machine learning algorithms.&lt;/p&gt;&#xA;&lt;h2 id=&#34;boosting-by-well-designed-ensemble&#34;&gt;&#xA;  Boosting by Well-Designed Ensemble&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#boosting-by-well-designed-ensemble&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Boosting is an algorithm specific to machine learning that efficiently&#xA;collects weak learners and augments them into a strong learner.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>多変量解析 (後期火曜1限)</title>
-				<link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
-				<pubDate>Wed, 01 Oct 2025 00:00:00 +0900</pubDate>
-				<guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
-				<description>&lt;p&gt;多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/multivariate-analysis&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<title>確率・統計 (前期火曜1限)</title>
+				<link>https://noboru-murata.github.io/lectures/probability-statistics/</link>
+				<pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
+				<guid>https://noboru-murata.github.io/lectures/probability-statistics/</guid>
+				<description>&lt;p&gt;システム制御や信号処理，あるいは機械学習といった分野では，雑音や誤差を含んで観測される信号に基づいて様々な処理を行う場面が多い．不確定性を伴なって観測されるデータを記述するための道具立てとして確率論と統計学があるが，本講義では多くの工学分野で必要とされる確率・統計について基本的な考え方を学んでもらう．まずはじめに測度論に基づいた確率論を概説し，数学的な枠組に慣れてもらう．その後統計的な手法として，推定論と検定論の基礎を学んでもらう．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/probability-statistics&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>Biological Data Analysis</title>
@@ -77,11 +70,11 @@
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Nagayama, M., Aritake, T., Hino, H., Kanda, T., Miyazaki, T., Yanagisawa, M., Akaho, S., Murata, N.&#xA;&lt;em&gt;Neural Networks&lt;/em&gt;&#xA;Volume 149, May 2022, pages 29-39&#xA;&lt;a href=&#34;https://doi.org/10.1016/j.neunet.2022.01.023&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1016/j.neunet.2022.01.023&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;A large number of neurons form cell assemblies that process&#xA;information in the brain. Recent developments in measurement&#xA;technology, one of which is calcium imaging, have made it possible to&#xA;study cell assemblies. In this study, we aim to extract cell&#xA;assemblies from calcium imaging data. We propose a clustering approach&#xA;based on non-negative matrix factorization (NMF). The proposed&#xA;approach first obtains a similarity matrix between neurons by NMF and&#xA;then performs spectral clustering on it. The application of NMF&#xA;entails the problem of model selection. The number of bases in NMF&#xA;affects the result considerably, and a suitable selection method is&#xA;yet to be established. We attempt to resolve this problem by model&#xA;averaging with a newly defined estimator based on NMF. Experiments on&#xA;simulated data suggest that the proposed approach is superior to&#xA;conventional correlation-based clustering methods over a wide range of&#xA;sampling rates. We also analyzed calcium imaging data of&#xA;sleeping/waking mice and the results suggest that the size of the cell&#xA;assembly depends on the degree and spatial extent of slow wave&#xA;generation in the cerebral cortex.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>情報学習論 (前期月曜3限)</title>
-				<link>https://noboru-murata.github.io/lectures/machine-learning/</link>
+				<title>信号処理 (前期金曜1限)</title>
+				<link>https://noboru-murata.github.io/lectures/signal-processing/</link>
 				<pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
-				<guid>https://noboru-murata.github.io/lectures/machine-learning/</guid>
-				<description>&lt;p&gt;与えられたデータに内在する確率構造を捉えるための学習アルゴリズムの基本的な性質を論じるための統計的・幾何学的な方法を学ぶ．統計的漸近理論と情報幾何の基本的な考え方を紹介しながら，学習機械とその学習アルゴリズムについて具体例を示しながら論じるとともに，現実問題に適用する際の問題点を分析し，その解決法を考えていく力を身に付けることを目指す．&lt;/p&gt;</description>
+				<guid>https://noboru-murata.github.io/lectures/signal-processing/</guid>
+				<description>&lt;p&gt;信号処理とは音・光・電磁波などを扱う技術である．信号を変換することによって，信号の中に含まれる重要な情報を抽出し，ノイズ除去，予測，カテゴリ判別などに利用することが目的となる．授業においては，フーリエ変換に代表される基底による信号の表現と取り扱い，簡単なフィルタの理論を学ぶ．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/signal-processing&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>Statistical Machine Learning</title>
@@ -98,11 +91,11 @@
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Aritake, T., Hino, H., Namiki, S., Asanuma, D., Hirose, K., Murata, N.&#xA;&lt;em&gt;Results in Optics&lt;/em&gt;&#xA;Volume 1, November 2020, 100019&#xA;&lt;a href=&#34;https://doi.org/10.1016/j.rio.2020.100019&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1016/j.rio.2020.100019&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Single‐molecule localization microscopy is widely used in biological&#xA;research for measuring the nanostructures of samples smaller than the&#xA;diffraction limit. In this paper, a novel method for regression of the&#xA;coordinates of molecules for multifocal plane microscopy is&#xA;presented. A regression problem for the target space is decomposed&#xA;into regression problems for small subsets of the target space. Then,&#xA;a deep neural network is used to solve these problems. By decomposing&#xA;the regression problem, a fully convolutional neural network can be&#xA;used to solve the regression problems. The computation of the network&#xA;is efficient, and a simple and parameter‐free loss function can be&#xA;used to train the network. The proposed algorithm is validated by both&#xA;simulated and real data obtained by quad‐plane microscopy.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>信号処理 (前期金曜1限)</title>
-				<link>https://noboru-murata.github.io/lectures/signal-processing/</link>
-				<pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
-				<guid>https://noboru-murata.github.io/lectures/signal-processing/</guid>
-				<description>&lt;p&gt;信号処理とは音・光・電磁波などを扱う技術である．信号を変換することによって，信号の中に含まれる重要な情報を抽出し，ノイズ除去，予測，カテゴリ判別などに利用することが目的となる．授業においては，フーリエ変換に代表される基底による信号の表現と取り扱い，簡単なフィルタの理論を学ぶ．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/signal-processing&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<title>多変量解析 (後期火曜1限)</title>
+				<link>https://noboru-murata.github.io/lectures/multivariate-analysis/</link>
+				<pubDate>Wed, 01 Oct 2025 00:00:00 +0900</pubDate>
+				<guid>https://noboru-murata.github.io/lectures/multivariate-analysis/</guid>
+				<description>&lt;p&gt;多変量解析法は多次元の変量を解析するために開発された方法の総称である．この講義ではその中の主要な方法を取り上げ，その基本的な考え方を修得することを目的とする．データを縮約し，その構造をより鮮明に捉えるために少数の変量に変換する手法として回帰分析・主成分分析を，多数の変量を手掛りにデータを分類するための手法として判別分析・クラスタ分析を学ぶ．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/multivariate-analysis&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>Estimation of neural connections from partially observed neural spikes</title>
@@ -112,11 +105,11 @@
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Iwasaki, T., Hino, H., Tatsuno, M., Akaho, S., Murata, N.&#xA;&lt;em&gt;Neural Networks&lt;/em&gt;&#xA;Volume 108, December 2018, Pages 172-191&#xA;&lt;a href=&#34;https://doi.org/10.1016/j.neunet.2018.07.019&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1016/j.neunet.2018.07.019&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Plasticity is one of the most important properties of the nervous&#xA;system, which enables animals to adjust their behavior to the&#xA;ever-changing external environment. Changes in synaptic efficacy&#xA;between neurons constitute one of the major mechanisms of&#xA;plasticity. Therefore, estimation of neural connections is crucial for&#xA;investigating information processing in the brain. Although many&#xA;analysis methods have been proposed for this purpose, most of them&#xA;suffer from one or all the following mathematical difficulties: (1)&#xA;only partially observed neural activity is available; (2) correlations&#xA;can include both direct and indirect pseudo-interactions; and (3)&#xA;biological evidence that a neuron typically has only one type of&#xA;connection (excitatory or inhibitory) should be considered. To&#xA;overcome these difficulties, a novel probabilistic framework for&#xA;estimating neural connections from partially observed spikes is&#xA;proposed in this paper. First, based on the property of a sum of&#xA;random variables, the proposed method estimates the influence of&#xA;unobserved neurons on observed neurons and extracts only the&#xA;correlations among observed neurons. Second, the relationship between&#xA;pseudo-correlations and target connections is modeled by neural&#xA;propagation in a multiplicative manner. Third, a novel&#xA;information-theoretic framework is proposed for estimating neuron&#xA;types. The proposed method was validated using spike data generated by&#xA;artificial neural networks. In addition, it was applied to multi-unit&#xA;data recorded from the CA1 area of a rat’s hippocampus. The results&#xA;confirmed that our estimates are consistent with previous&#xA;reports. These findings indicate that the proposed method is useful&#xA;for extracting crucial interactions in neural signals as well as in&#xA;other multi-probed point process data.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>確率・統計 (前期火曜1限)</title>
-				<link>https://noboru-murata.github.io/lectures/probability-statistics/</link>
+				<title>統計データ解析 (前期・後期金曜5限)</title>
+				<link>https://noboru-murata.github.io/lectures/statistical-data-analysis/</link>
 				<pubDate>Wed, 01 Apr 2026 00:00:00 +0900</pubDate>
-				<guid>https://noboru-murata.github.io/lectures/probability-statistics/</guid>
-				<description>&lt;p&gt;システム制御や信号処理，あるいは機械学習といった分野では，雑音や誤差を含んで観測される信号に基づいて様々な処理を行う場面が多い．不確定性を伴なって観測されるデータを記述するための道具立てとして確率論と統計学があるが，本講義では多くの工学分野で必要とされる確率・統計について基本的な考え方を学んでもらう．まずはじめに測度論に基づいた確率論を概説し，数学的な枠組に慣れてもらう．その後統計的な手法として，推定論と検定論の基礎を学んでもらう．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/probability-statistics&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<guid>https://noboru-murata.github.io/lectures/statistical-data-analysis/</guid>
+				<description>&lt;p&gt;本講義は &lt;a href=&#34;http://www.mi.u-tokyo.ac.jp/index.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数理・情報教育研究センター&lt;/a&gt; のプログラムの一環です．&lt;/p&gt;&#xA;&lt;p&gt;統計データ解析Iでは，受講者が統計ソフトウエアを用いた実験によって確率的現象に慣れ，統計推測法の意味を理解し，データ解析の方法を実習する．統計ソフトウエアRの使い方を学んだあと，シミュレーションによってランダムネスと極限定理を体験する．後で必要になる確率分布を学び，基本的な記述統計量と標本分布に関する基礎事項を学習する．推測統計における基礎的な推定・検定法，および分散分析，回帰分析の方法を，データ処理を通じて実習する．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/statistical-data-analysis1&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;統計データ解析Ⅱでは，統計ソフトウエアRの説明の後，高次元大規模データに潜む相関構造を発見し計量する多変量解析，および時系列データの基本的な解析法を学ぶ．統計手法の運用とデータハンドリングを実習することに加え，微分積分学，線型代数学等の前期課程数学と連携し，数理科学的側面を意識しながら，実験を介して統計手法の合理性と体系を感得する．&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://noboru-murata.github.io/statistical-data-analysis2&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;講義資料&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>EEG dipole source localization with information criteria for multiple particle filters</title>
