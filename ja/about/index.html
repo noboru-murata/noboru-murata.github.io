@@ -13,7 +13,7 @@
 
 
 <meta name="author" content="村田 昇">
-<meta name="description" content="This site is produced and maintained by the following tools.
+<meta name="description" content="このサイトは，以下のツールを使用して作成・管理されています．
 
   Hugo
   
@@ -23,11 +23,10 @@
 
 
 [ Hugo ]
-is one of the most popular open-source static site
-generators. With its amazing speed and flexibility, Hugo makes
-building websites fun again.
+は，最も人気のあるオープンソースの静的サイトジェネレータの一つです．その驚異的な速度と柔軟性により，
+Hugoはウェブサイト制作を再び楽しいものにしてくれます．
 
-For installing on macOS, it is easy to use Homebrew.
+macOSへのインストールには，Homebrewを使うのが簡単です．
 brew install hugo
 
   Hugo theme coder
@@ -38,30 +37,52 @@ brew install hugo
 
 
 [ Hugo coder ]
-is a minimalist blog theme for hugo.
+Hugo用のミニマルなブログテーマです．
 
-In this site,
-default setups are used without any modification.">
+このサイトでは，デフォルトの設定をそのまま使用しています．
+
+  ox-hugo
+  
+    
+    見出しへのリンク
+  
+
+
+[ ox-hugo ]
+は，OrgをHugo互換のMarkdown（Blackfriday）形式にエクスポートし，さらにフロントマター（TOMLまたはYAML形式）を生成するOrgエクスポーターバックエンドです．
+
+leaf/use-package がインストールされている場合は，設定ファイルに以下の内容を追加してください．
+(leaf ox-hugo :after ox)
+;; or
+(use-package ox-hugo :after ox)
+その後，すべてのMDファイルはEmacs用の1つのorgファイルにまとめられ，
+C-c C-e H A でエクスポートされます．">
 <meta name="keywords" content="講義,研究,経歴">
 
 
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="その他">
-	<meta name="twitter:description" content="This site is produced and maintained by the following tools.
-Hugo 見出しへのリンク [ Hugo ] is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
-For installing on macOS, it is easy to use Homebrew.
-brew install hugo Hugo theme coder 見出しへのリンク [ Hugo coder ] is a minimalist blog theme for hugo.
-In this site, default setups are used without any modification.">
+	<meta name="twitter:description" content="このサイトは，以下のツールを使用して作成・管理されています．
+Hugo 見出しへのリンク [ Hugo ] は，最も人気のあるオープンソースの静的サイトジェネレータの一つです．その驚異的な速度と柔軟性により， Hugoはウェブサイト制作を再び楽しいものにしてくれます．
+macOSへのインストールには，Homebrewを使うのが簡単です．
+brew install hugo Hugo theme coder 見出しへのリンク [ Hugo coder ] Hugo用のミニマルなブログテーマです．
+このサイトでは，デフォルトの設定をそのまま使用しています．
+ox-hugo 見出しへのリンク [ ox-hugo ] は，OrgをHugo互換のMarkdown（Blackfriday）形式にエクスポートし，さらにフロントマター（TOMLまたはYAML形式）を生成するOrgエクスポーターバックエンドです．
+leaf/use-package がインストールされている場合は，設定ファイルに以下の内容を追加してください．
+(leaf ox-hugo :after ox) ;; or (use-package ox-hugo :after ox) その後，すべてのMDファイルはEmacs用の1つのorgファイルにまとめられ， C-c C-e H A でエクスポートされます．">
 
 <meta property="og:url" content="https://noboru-murata.github.io/ja/about/">
 	<meta property="og:site_name" content="村田 昇">
 	<meta property="og:title" content="その他">
-	<meta property="og:description" content="This site is produced and maintained by the following tools.
-Hugo 見出しへのリンク [ Hugo ] is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
-For installing on macOS, it is easy to use Homebrew.
-brew install hugo Hugo theme coder 見出しへのリンク [ Hugo coder ] is a minimalist blog theme for hugo.
-In this site, default setups are used without any modification.">
+	<meta property="og:description" content="このサイトは，以下のツールを使用して作成・管理されています．
+Hugo 見出しへのリンク [ Hugo ] は，最も人気のあるオープンソースの静的サイトジェネレータの一つです．その驚異的な速度と柔軟性により， Hugoはウェブサイト制作を再び楽しいものにしてくれます．
+macOSへのインストールには，Homebrewを使うのが簡単です．
+brew install hugo Hugo theme coder 見出しへのリンク [ Hugo coder ] Hugo用のミニマルなブログテーマです．
+このサイトでは，デフォルトの設定をそのまま使用しています．
+ox-hugo 見出しへのリンク [ ox-hugo ] は，OrgをHugo互換のMarkdown（Blackfriday）形式にエクスポートし，さらにフロントマター（TOMLまたはYAML形式）を生成するOrgエクスポーターバックエンドです．
+leaf/use-package がインストールされている場合は，設定ファイルに以下の内容を追加してください．
+(leaf ox-hugo :after ox) ;; or (use-package ox-hugo :after ox) その後，すべてのMDファイルはEmacs用の1つのorgファイルにまとめられ， C-c C-e H A でエクスポートされます．">
 	<meta property="og:locale" content="ja">
 	<meta property="og:type" content="article">
 		<meta property="article:published_time" content="2026-06-02T00:00:00+09:00">
@@ -152,7 +173,19 @@ In this site, default setups are used without any modification.">
         
           
             <li class="navigation-item">
+              <a class="navigation-link " href="/ja/research/">研究</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/ja/publications/">論文</a>
+            </li>
+          
+            <li class="navigation-item">
               <a class="navigation-link " href="/ja/lectures/">講義</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/ja/vitae/">経歴</a>
             </li>
           
             <li class="navigation-item">
@@ -195,7 +228,7 @@ In this site, default setups are used without any modification.">
       </h1>
     </header>
 
-    <p>This site is produced and maintained by the following tools.</p>
+    <p>このサイトは，以下のツールを使用して作成・管理されています．</p>
 <h2 id="hugo">
   Hugo
   <a class="heading-link" href="#hugo">
@@ -205,11 +238,10 @@ In this site, default setups are used without any modification.">
 </h2>
 <blockquote>
 <p>[ <a href="https://gohugo.io"  class="external-link" target="_blank" rel="noopener">Hugo</a> ]
-is one of the most popular open-source static site
-generators. With its amazing speed and flexibility, Hugo makes
-building websites fun again.</p>
+は，最も人気のあるオープンソースの静的サイトジェネレータの一つです．その驚異的な速度と柔軟性により，
+Hugoはウェブサイト制作を再び楽しいものにしてくれます．</p>
 </blockquote>
-<p>For installing on macOS, it is easy to use Homebrew.</p>
+<p>macOSへのインストールには，Homebrewを使うのが簡単です．</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install hugo
 </span></span></code></pre></div><h2 id="hugo-theme-coder">
   Hugo theme coder
@@ -220,10 +252,9 @@ building websites fun again.</p>
 </h2>
 <blockquote>
 <p>[ <a href="https://github.com/luizdepra/hugo-coder"  class="external-link" target="_blank" rel="noopener">Hugo coder</a> ]
-is a minimalist blog theme for hugo.</p>
+Hugo用のミニマルなブログテーマです．</p>
 </blockquote>
-<p>In this site,
-default setups are used without any modification.</p>
+<p>このサイトでは，デフォルトの設定をそのまま使用しています．</p>
 <h2 id="ox-hugo">
   ox-hugo
   <a class="heading-link" href="#ox-hugo">
@@ -233,14 +264,14 @@ default setups are used without any modification.</p>
 </h2>
 <blockquote>
 <p>[ <a href="https://ox-hugo.scripter.co"  class="external-link" target="_blank" rel="noopener">ox-hugo</a> ]
-is an Org exporter backend that exports Org to
-Hugo-compatible Markdown (Blackfriday) and also generates the
-front-matter (in TOML or YAML format).</p>
+は，OrgをHugo互換のMarkdown（Blackfriday）形式にエクスポートし，さらにフロントマター（TOMLまたはYAML形式）を生成するOrgエクスポーターバックエンドです．</p>
 </blockquote>
-<p>If use-package is installed, just add the below to the config.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">ox-hugo</span> <span class="nb">:after</span> <span class="nv">ox</span><span class="p">)</span>
-</span></span></code></pre></div><p>Then, all the MD files are maintained in one org file for Emacs
-and exported with <code>C-c C-e H A</code>.</p>
+<p>leaf/use-package がインストールされている場合は，設定ファイルに以下の内容を追加してください．</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">leaf</span> <span class="nv">ox-hugo</span> <span class="nb">:after</span> <span class="nv">ox</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; or</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">ox-hugo</span> <span class="nb">:after</span> <span class="nv">ox</span><span class="p">)</span>
+</span></span></code></pre></div><p>その後，すべてのMDファイルはEmacs用の1つのorgファイルにまとめられ，
+<code>C-c C-e H A</code> でエクスポートされます．</p>
 
   </article>
 </section>

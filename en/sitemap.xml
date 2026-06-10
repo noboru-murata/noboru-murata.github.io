@@ -5,6 +5,16 @@
   <url>
     <loc>https://noboru-murata.github.io/vitae/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/vitae/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/vitae/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/about/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
@@ -21,6 +31,16 @@
   </url><url>
     <loc>https://noboru-murata.github.io/research/</loc>
     <lastmod>2021-08-19T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/research/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/research/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/</loc>
     <lastmod>2021-04-01T00:00:00+09:00</lastmod>
@@ -37,6 +57,16 @@
   </url><url>
     <loc>https://noboru-murata.github.io/publications/</loc>
     <lastmod>2019-08-01T09:54:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/machine-learning/</loc>
     <lastmod>2026-04-01T00:00:00+09:00</lastmod>
@@ -53,9 +83,29 @@
   </url><url>
     <loc>https://noboru-murata.github.io/publications/object-embed/</loc>
     <lastmod>2023-07-21T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/object-embed/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/object-embed/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/research/information-geometry/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/research/information-geometry/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/research/information-geometry/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/probability-statistics/</loc>
     <lastmod>2026-04-01T00:00:00+09:00</lastmod>
@@ -72,9 +122,29 @@
   </url><url>
     <loc>https://noboru-murata.github.io/research/biological-data/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/research/biological-data/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/research/biological-data/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/nmf-clust/</loc>
     <lastmod>2022-05-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/nmf-clust/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/nmf-clust/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/signal-processing/</loc>
     <lastmod>2026-04-01T00:00:00+09:00</lastmod>
@@ -91,9 +161,29 @@
   </url><url>
     <loc>https://noboru-murata.github.io/research/machine-learning/</loc>
     <lastmod>2023-06-21T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/research/machine-learning/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/research/machine-learning/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/cnn-smlm/</loc>
     <lastmod>2020-11-03T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/cnn-smlm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/cnn-smlm/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/multivariate-analysis/</loc>
     <lastmod>2025-10-01T00:00:00+09:00</lastmod>
@@ -110,6 +200,16 @@
   </url><url>
     <loc>https://noboru-murata.github.io/publications/spike-train/</loc>
     <lastmod>2018-12-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/spike-train/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/spike-train/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/lectures/statistical-data-analysis/</loc>
     <lastmod>2026-04-01T00:00:00+09:00</lastmod>
@@ -126,24 +226,94 @@
   </url><url>
     <loc>https://noboru-murata.github.io/publications/eeg-dipole/</loc>
     <lastmod>2018-12-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/eeg-dipole/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/eeg-dipole/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/unbounded-activation/</loc>
     <lastmod>2017-09-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/unbounded-activation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/unbounded-activation/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/geometric-bradley-terry/</loc>
     <lastmod>2011-06-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/geometric-bradley-terry/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/geometric-bradley-terry/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/u-boost/</loc>
     <lastmod>2004-07-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/u-boost/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/u-boost/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/blind-separation/</loc>
     <lastmod>2001-01-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/blind-separation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/blind-separation/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/ingegral-representation/</loc>
     <lastmod>1996-08-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/ingegral-representation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/ingegral-representation/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/publications/network-information-criterion/</loc>
     <lastmod>1994-11-01T00:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/publications/network-information-criterion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://noboru-murata.github.io/publications/network-information-criterion/"
+                />
   </url><url>
     <loc>https://noboru-murata.github.io/</loc>
     <lastmod>2026-04-01T00:00:00+09:00</lastmod>
@@ -173,37 +343,37 @@
     <loc>https://noboru-murata.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://noboru-murata.github.io/categories/"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://noboru-murata.github.io/ja/categories/"
+                hreflang="en"
+                href="https://noboru-murata.github.io/categories/"
                 />
   </url><url>
     <loc>https://noboru-murata.github.io/series/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://noboru-murata.github.io/ja/series/"
+                hreflang="en"
+                href="https://noboru-murata.github.io/series/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://noboru-murata.github.io/series/"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/series/"
                 />
   </url><url>
     <loc>https://noboru-murata.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://noboru-murata.github.io/tags/"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://noboru-murata.github.io/ja/tags/"
+                hreflang="en"
+                href="https://noboru-murata.github.io/tags/"
                 />
   </url>
 </urlset>
