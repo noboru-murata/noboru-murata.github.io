@@ -366,13 +366,13 @@
     <loc>https://noboru-murata.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://noboru-murata.github.io/ja/tags/"
+                hreflang="en"
+                href="https://noboru-murata.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://noboru-murata.github.io/tags/"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/tags/"
                 />
   </url>
 </urlset>
