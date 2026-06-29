@@ -330,13 +330,13 @@
     <loc>https://noboru-murata.github.io/ja/authors/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://noboru-murata.github.io/ja/authors/"
+                hreflang="en"
+                href="https://noboru-murata.github.io/authors/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://noboru-murata.github.io/authors/"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/authors/"
                 />
   </url><url>
     <loc>https://noboru-murata.github.io/ja/categories/</loc>
@@ -366,13 +366,13 @@
     <loc>https://noboru-murata.github.io/ja/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ja"
-                href="https://noboru-murata.github.io/ja/tags/"
+                hreflang="en"
+                href="https://noboru-murata.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://noboru-murata.github.io/tags/"
+                hreflang="ja"
+                href="https://noboru-murata.github.io/ja/tags/"
                 />
   </url>
 </urlset>
