@@ -1,0 +1,659 @@
+<title>クロソイド PINN 実験室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@700&display=swap">
+<style>
+/* Layout: drafting-sheet workbench — plan view on the left, controls and readouts on the right, two strip charts below */
+:root{
+  --bg:#EDF1EF; --panel:#F8FAF9; --ink:#17211E; --muted:#56665F; --rule:#C9D3CE; --grid:#DDE4E0;
+  --pinn:#0B7558; --pinn-soft:rgba(11,117,88,.12); --ref:#3F4D48; --target:#A86A0C; --bad:#B23F33;
+  --f-display:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-body:"IBM Plex Sans JP","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101614; --panel:#18201D; --ink:#E1E9E5; --muted:#93A39C; --rule:#2D3934; --grid:#222C28;
+  --pinn:#3FCB9E; --pinn-soft:rgba(63,203,158,.14); --ref:#B9C6C0; --target:#E3A94B; --bad:#E57C70; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101614; --panel:#18201D; --ink:#E1E9E5; --muted:#93A39C; --rule:#2D3934; --grid:#222C28;
+  --pinn:#3FCB9E; --pinn-soft:rgba(63,203,158,.14); --ref:#B9C6C0; --target:#E3A94B; --bad:#E57C70; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 48px;display:grid;gap:20px}
+header{display:grid;gap:6px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+h1{font-family:var(--f-display);font-size:clamp(24px,3.4vw,34px);line-height:1.25;margin:0;text-wrap:balance}
+.lead{margin:0;color:var(--muted);max-width:68ch}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--rule)}
+.tab{font:inherit;font-weight:600;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:8px 14px;cursor:pointer;margin-bottom:-1px}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--pinn)}
+.tab:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--pinn);outline-offset:2px}
+.main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,1fr);gap:20px;align-items:start}
+@media (max-width:860px){.main{grid-template-columns:minmax(0,1fr)}}
+.sheet{background:var(--panel);border:1px solid var(--rule);border-radius:6px;position:relative;min-width:0}
+.sheet canvas{display:block;width:100%;aspect-ratio:16/10;max-width:100%;touch-action:none}
+.sheet .tb{position:absolute;right:10px;bottom:8px;font-family:var(--f-mono);font-size:11px;color:var(--muted);border:1px solid var(--rule);padding:2px 8px;background:var(--panel)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;padding:10px 14px;border-top:1px solid var(--rule);font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:18px;height:0;border-top:2.5px solid;vertical-align:middle;margin-right:6px}
+.side{display:grid;gap:16px;min-width:0}
+.group{display:grid;gap:10px}
+.group h2{font-size:12px;font-family:var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0;font-weight:500}
+.field{display:grid;grid-template-columns:7.5em minmax(0,1fr) 5.2em;gap:8px;align-items:center}
+.field label{font-size:13px}
+.field input[type=range]{width:100%;accent-color:var(--pinn)}
+.field input[type=number],select{font:inherit;font-family:var(--f-mono);font-size:13px;width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--rule);border-radius:4px;padding:3px 6px}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+button.b{font:inherit;font-weight:600;font-size:13px;border-radius:4px;padding:7px 14px;cursor:pointer;border:1px solid var(--rule);background:var(--panel);color:var(--ink)}
+button.b.primary{background:var(--pinn);border-color:var(--pinn);color:var(--panel)}
+button.b:disabled{opacity:.45;cursor:default}
+.chip{font:inherit;font-size:12px;border:1px solid var(--rule);background:none;color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--pinn);background:var(--pinn-soft)}
+.status{font-family:var(--f-mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.status b{color:var(--ink);font-weight:500}
+.pill{display:inline-block;padding:0 8px;border-radius:999px;border:1px solid var(--rule);color:var(--ink)}
+.pill.run{border-color:var(--pinn);color:var(--pinn)}
+table.ro{width:100%;border-collapse:collapse;font-size:13px}
+table.ro th,table.ro td{padding:5px 6px;border-bottom:1px solid var(--rule);text-align:right}
+table.ro th:first-child,table.ro td:first-child{text-align:left}
+table.ro thead th{font-size:11.5px;color:var(--muted);font-weight:500}
+table.ro td{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+td.p{color:var(--pinn)}
+.check{display:flex;align-items:center;gap:8px;font-size:13px}
+.check input{accent-color:var(--pinn);width:16px;height:16px}
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:700px){.charts{grid-template-columns:minmax(0,1fr)}}
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;min-width:0}
+.chart h3{margin:0 0 4px;font-size:13px;font-weight:600}
+.chart p{margin:0 0 6px;font-size:12px;color:var(--muted)}
+.chart canvas{display:block;width:100%;height:190px}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;font-size:13px;color:var(--muted)}
+.notes h3{font-size:13px;color:var(--ink);margin:0 0 4px}
+.notes p{margin:0}
+.eq{font-family:var(--f-mono);font-size:12.5px;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:8px 10px;overflow-x:auto;white-space:nowrap}
+.hint{font-size:12px;color:var(--muted);margin:0}
+
+/* 埋め込み (#embed): スライドのキャンバス 1050×700 に 1 画面で収める．見出しと注記は出さない */
+body.embed{margin:0;height:100vh;overflow:hidden;font-size:13px;line-height:1.45}
+body.embed .wrap{max-width:none;height:100vh;padding:8px 12px 10px;gap:8px 16px;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr);align-content:stretch}
+body.embed header,body.embed .notes{display:none}
+body.embed .tabs{grid-column:1/-1}
+body.embed .tab{padding:5px 12px}
+body.embed .main{display:contents}
+body.embed .sheet{grid-column:1;grid-row:2}
+body.embed .legend{padding:5px 12px}
+body.embed .side{grid-column:2;grid-row:2/4;overflow:auto;gap:12px;align-content:start}
+body.embed .group{gap:7px}
+body.embed .hint{line-height:1.4}
+body.embed .charts{grid-column:1;grid-row:3;gap:12px;min-height:0}
+body.embed .chart{padding:6px 10px 8px;display:flex;flex-direction:column;min-height:0}
+body.embed .chart p{display:none}
+body.embed .chart canvas{flex:1 1 0;height:auto;min-height:0}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Physics-informed ML · 講演「物理を組み込む機械学習」の例題</div>
+    <h1>クロソイド PINN 実験室</h1>
+    <p class="lead">講演の例題のうち，問題2 (設計)・問題3 (同定)・問題4 (曲率分布の設計) をブラウザの中で解きます。問題2・3 は曲線の方程式を損失に入れる PINN，問題4 はネットワークが曲率の変化率だけを出力し，積分層と射影で方程式と終点の条件を厳密に満たす方法です。計算はすべてこのブラウザ内で行われます。</p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-design" aria-selected="true">問題2: 設計 (G1 補間)</button>
+    <button class="tab" role="tab" id="tab-inverse" aria-selected="false">問題3: 同定 (測量点から A)</button>
+    <button class="tab" role="tab" id="tab-curv" aria-selected="false">問題4: 曲率分布の設計</button>
+  </div>
+
+  <div class="main">
+    <div class="sheet">
+      <canvas id="plan" aria-label="平面線形図"></canvas>
+      <div class="tb" id="tb">平面図 · 単位 m · 測点 20 m</div>
+      <div class="legend" id="legend"></div>
+    </div>
+
+    <div class="side">
+      <!-- design controls -->
+      <div class="group" id="ctl-design">
+        <h2>終点条件</h2>
+        <div class="field"><label for="x1">終点 x₁ [m]</label><input type="range" id="x1r" min="20" max="160" step="0.5"><input type="number" id="x1" step="0.5"></div>
+        <div class="field"><label for="y1">終点 y₁ [m]</label><input type="range" id="y1r" min="-80" max="80" step="0.5"><input type="number" id="y1" step="0.5"></div>
+        <div class="field"><label for="t1">方位 φ₁ [°]</label><input type="range" id="t1r" min="-150" max="150" step="0.5"><input type="number" id="t1" step="0.5"></div>
+        <div class="row" id="presets"></div>
+        <p class="hint">図中の終点（橙の点）と方位ハンドルはドラッグでも動かせます。始点は原点・方位 0° に固定。</p>
+      </div>
+      <!-- inverse controls -->
+      <div class="group" id="ctl-inverse" hidden>
+        <h2>測量データ</h2>
+        <p class="hint">真の線形は直線から始まる緩和曲線 A = 109.54 m（R = 150 m、L = 80 m）。測点ごとの座標に測量誤差を加えたものだけを学習に使います。</p>
+        <div class="field"><label for="smax">測量範囲</label><select id="smax"><option value="40">0–40 m（後半は未測量）</option><option value="80">0–80 m（全区間）</option></select><span></span></div>
+        <div class="field"><label for="sigma">測量誤差 σ</label><select id="sigma"><option value="0">0 cm</option><option value="0.05" selected>5 cm</option><option value="0.2">20 cm</option></select><span></span></div>
+        <div class="field"><label for="wd">データ重み w_d</label><select id="wd"><option value="10">10</option><option value="100" selected>100</option><option value="1000">1000</option></select><span></span></div>
+        <div class="field"><label for="seed">乱数シード</label><input type="number" id="seed" min="1" max="999" value="1"><span></span></div>
+        <label class="check"><input type="checkbox" id="phys" checked> 方程式の項 L_r を損失に含める（外すとデータだけの NN）</label>
+      </div>
+
+      <!-- curvature-design controls (問題4) -->
+      <div class="group" id="ctl-curv" hidden>
+        <h2>真の複合曲線（終点の条件を作る）</h2>
+        <div class="field"><label for="cs1">クロソイド長 [m]</label><input type="range" id="cs1r" min="20" max="60" step="1"><input type="number" id="cs1" step="1"></div>
+        <div class="field"><label for="cs2">円弧長 [m]</label><input type="range" id="cs2r" min="0" max="60" step="1"><input type="number" id="cs2" step="1"></div>
+        <div class="field"><label for="cr">最小半径 R_min [m]</label><input type="range" id="crr" min="60" max="200" step="5"><input type="number" id="cr" step="5"></div>
+        <p class="hint">直線 → クロソイド → 円弧 → クロソイド → 直線の曲線から，終点の位置・方位・曲率 (0) を作ります。区間の構成は学習側に教えません。</p>
+        <div class="field"><label for="csm">滑らかさ L_s</label><select id="csm"><option value="L1" selected>L1（∫|κ''|）</option><option value="L2">L2（∫κ''²）</option></select><span></span></div>
+        <label class="check"><input type="checkbox" id="ccap" checked> 最小半径の罰則 L_c を損失に含める</label>
+      </div>
+
+      <div class="group">
+        <h2>学習</h2>
+        <div class="row">
+          <button class="b primary" id="run">学習を開始</button>
+          <button class="b" id="stop" disabled>停止</button>
+          <button class="b" id="reset">初期化</button>
+        </div>
+        <div class="status" id="status"></div>
+      </div>
+
+      <div class="group">
+        <h2>結果</h2>
+        <table class="ro" id="ro"></table>
+        <p class="hint" id="ro-note"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart">
+      <h3>損失の推移</h3>
+      <p id="loss-note">縦軸は log₁₀。破線の位置で Adam から L-BFGS に切り替え。</p>
+      <canvas id="loss" aria-label="損失の推移"></canvas>
+    </div>
+    <div class="chart">
+      <h3>曲率図 κ(s)</h3>
+      <p id="kap-note">クロソイドなら直線になる。PINN はネットワークの出力 φ を自動微分して描画。</p>
+      <canvas id="kap" aria-label="曲率図"></canvas>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div><h3>方程式（t = s/L，′ = d/dt）</h3><div class="eq" id="eq-model"></div></div>
+    <div><h3>損失</h3><div class="eq" id="eq-loss"></div><p id="eq-terms" style="margin-top:6px"></p></div>
+    <div><h3>ネットワークと最適化</h3><p id="net-desc"></p></div>
+  </div>
+</div>
+
+<script>
+// ===== PINN core: 1 input -> 2 tanh hidden layers -> 3 outputs, forward-mode d/dt + manual backprop =====
+function rng(seed){let s=seed>>>0||1;return()=>{s^=s<<13;s>>>=0;s^=s>>17;s^=s<<5;s>>>=0;return s/4294967296;};}
+function gauss(r){let u=0,v=0;while(!u)u=r();v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function makeNet(H,seed){
+  const r=rng(seed),P={H};
+  const xav=(fi,fo)=>Math.sqrt(2/(fi+fo));
+  P.W1=new Float64Array(H).map(()=>gauss(r)*xav(1,H));P.b1=new Float64Array(H);
+  P.W2=new Float64Array(H*H).map(()=>gauss(r)*xav(H,H));P.b2=new Float64Array(H);
+  P.W3=new Float64Array(3*H).map(()=>gauss(r)*xav(H,3));P.b3=new Float64Array(3);
+  return P;
+}
+const KEYS=['W1','b1','W2','b2','W3','b3'];
+function zerosLike(P){const G={H:P.H};for(const k of KEYS)G[k]=new Float64Array(P[k].length);return G;}
+// forward at t: returns cache + outputs x,y,th and derivatives
+function fwd(P,t){
+  const H=P.H,a1=new Float64Array(H),da1=new Float64Array(H),s1=new Float64Array(H),a2=new Float64Array(H),da2=new Float64Array(H),s2=new Float64Array(H),dz2=new Float64Array(H);
+  for(let i=0;i<H;i++){const a=Math.tanh(P.W1[i]*t+P.b1[i]);a1[i]=a;s1[i]=1-a*a;da1[i]=s1[i]*P.W1[i];}
+  for(let i=0;i<H;i++){let z=P.b2[i],dz=0;const o=i*H;for(let j=0;j<H;j++){z+=P.W2[o+j]*a1[j];dz+=P.W2[o+j]*da1[j];}
+    const a=Math.tanh(z);a2[i]=a;s2[i]=1-a*a;dz2[i]=dz;da2[i]=s2[i]*dz;}
+  const o=[0,0,0],d=[0,0,0];
+  for(let k=0;k<3;k++){let v=P.b3[k],dv=0;const off=k*H;for(let j=0;j<H;j++){v+=P.W3[off+j]*a2[j];dv+=P.W3[off+j]*da2[j];}o[k]=v;d[k]=dv;}
+  return {t,a1,da1,s1,a2,da2,s2,dz2,o,d,
+    x:t*o[0],y:t*o[1],th:t*o[2],xp:o[0]+t*d[0],yp:o[1]+t*d[1],thp:o[2]+t*d[2]};
+}
+// backprop given gradients wrt (x,y,th,xp,yp,thp)
+function bwd(P,c,g,G){
+  const H=P.H,t=c.t;
+  const go=[t*g[0]+g[3],t*g[1]+g[4],t*g[2]+g[5]],gd=[t*g[3],t*g[4],t*g[5]];
+  const ga2=new Float64Array(H),gda2=new Float64Array(H);
+  for(let k=0;k<3;k++){const off=k*H;G.b3[k]+=go[k];
+    for(let j=0;j<H;j++){G.W3[off+j]+=go[k]*c.a2[j]+gd[k]*c.da2[j];ga2[j]+=P.W3[off+j]*go[k];gda2[j]+=P.W3[off+j]*gd[k];}}
+  const gz2=new Float64Array(H),gdz2=new Float64Array(H);
+  for(let i=0;i<H;i++){gdz2[i]=c.s2[i]*gda2[i];const gs=gda2[i]*c.dz2[i];const gat=ga2[i]-2*c.a2[i]*gs;gz2[i]=c.s2[i]*gat;}
+  const ga1=new Float64Array(H),gda1=new Float64Array(H);
+  for(let i=0;i<H;i++){const o=i*H;G.b2[i]+=gz2[i];
+    for(let j=0;j<H;j++){G.W2[o+j]+=gz2[i]*c.a1[j]+gdz2[i]*c.da1[j];ga1[j]+=P.W2[o+j]*gz2[i];gda1[j]+=P.W2[o+j]*gdz2[i];}}
+  for(let i=0;i<H;i++){const gdz1=c.s1[i]*gda1[i];const gs=gda1[i]*P.W1[i];const gat=ga1[i]-2*c.a1[i]*gs;const gz1=c.s1[i]*gat;
+    G.W1[i]+=gz1*t+gdz1;G.b1[i]+=gz1;}
+}
+// problem: {mode:'design', X1,Y1,TH1, w} params p=[k0,k1,q] (q=log ell)
+//          {mode:'inverse', td:[], xo:[], yo:[], wd, physics} params p=[q] (q=log(kend))
+function lossGrad(P,p,prob,T,G,gp){
+  for(const k of KEYS)G[k].fill(0);gp.fill(0);
+  let Lr=0,Lb=0;const N=T.length;
+  const physics=prob.mode==='design'||prob.physics;
+  if(physics){
+    const sc=2/(3*N);
+    for(const t of T){const c=fwd(P,t);let ell,kap,dk0=0,dk1=0;
+      if(prob.mode==='design'){ell=Math.exp(p[2]);kap=p[0]+(p[1]-p[0])*t;}else{ell=1;kap=Math.exp(p[0])*t;}
+      const cs=Math.cos(c.th),sn=Math.sin(c.th);
+      const rx=c.xp-ell*cs,ry=c.yp-ell*sn,rt=c.thp-ell*kap;Lr+=(rx*rx+ry*ry+rt*rt)/(3*N);
+      const gx=sc*rx,gy=sc*ry,gt=sc*rt;
+      bwd(P,c,[0,0,gx*ell*sn-gy*ell*cs,gx,gy,gt],G);
+      if(prob.mode==='design'){gp[0]+=gt*(-ell*(1-t));gp[1]+=gt*(-ell*t);gp[2]+=gx*(-ell*cs)+gy*(-ell*sn)+gt*(-ell*kap);}
+      else{gp[0]+=gt*(-kap);}
+    }
+  }
+  if(prob.mode==='design'){
+    const c=fwd(P,1),b=[c.x-prob.X1,c.y-prob.Y1,c.th-prob.TH1];Lb=(b[0]**2+b[1]**2+b[2]**2)/3;
+    const s=2*prob.w/3;bwd(P,c,[s*b[0],s*b[1],s*b[2],0,0,0],G);
+    return {L:Lr+prob.w*Lb,Lr,Lb};
+  }else{
+    const M=prob.td.length,s=2*prob.wd/(2*M);
+    for(let i=0;i<M;i++){const c=fwd(P,prob.td[i]);const bx=c.x-prob.xo[i],by=c.y-prob.yo[i];Lb+=(bx*bx+by*by)/(2*M);
+      bwd(P,c,[s*bx,s*by,0,0,0,0],G);}
+    return {L:Lr+prob.wd*Lb,Lr,Lb};
+  }
+}
+function makeAdam(P,p){const m={},v={};for(const k of KEYS){m[k]=new Float64Array(P[k].length);v[k]=new Float64Array(P[k].length);}
+  return {m,v,mp:new Float64Array(p.length),vp:new Float64Array(p.length),n:0};}
+function adamStep(A,P,G,p,gp,lr){const b1=0.9,b2=0.999,eps=1e-8;A.n++;const c1=1-b1**A.n,c2=1-b2**A.n;
+  const upd=(x,g,m,v)=>{for(let i=0;i<x.length;i++){m[i]=b1*m[i]+(1-b1)*g[i];v[i]=b2*v[i]+(1-b2)*g[i]*g[i];x[i]-=lr*(m[i]/c1)/(Math.sqrt(v[i]/c2)+eps);}};
+  for(const k of KEYS)upd(P[k],G[k],A.m[k],A.v[k]);upd(p,gp,A.mp,A.vp);}
+// ---- classical reference: RK4 integration of the clothoid ODE ----
+function integ(k0,k1,L,n=400){let x=0,y=0,th=0;const h=L/n,pts=[[0,0,0]];
+  const f=(s,th)=>[Math.cos(th),Math.sin(th),k0+(k1-k0)*s/L];
+  for(let i=0;i<n;i++){const s=i*h;
+    // theta is exact (quadratic); integrate x,y with Simpson on cos/sin(theta)
+    const T=s2=>k0*s2+(k1-k0)*s2*s2/(2*L);
+    const ta=T(s),tm=T(s+h/2),tb=T(s+h);
+    x+=h/6*(Math.cos(ta)+4*Math.cos(tm)+Math.cos(tb));y+=h/6*(Math.sin(ta)+4*Math.sin(tm)+Math.sin(tb));th=tb;pts.push([x,y,th]);}
+  return pts;}
+function solve3(J,F){// Gaussian elimination 3x3
+  const A=J.map((r,i)=>[...r,-F[i]]);for(let i=0;i<3;i++){let p=i;for(let r=i+1;r<3;r++)if(Math.abs(A[r][i])>Math.abs(A[p][i]))p=r;[A[i],A[p]]=[A[p],A[i]];
+    for(let r=0;r<3;r++)if(r!==i){const f=A[r][i]/A[i][i];for(let c=i;c<4;c++)A[r][c]-=f*A[i][c];}}return A.map((r,i)=>r[3]/r[i]);}
+function classicalG1(x1,y1,th1){const D=Math.hypot(x1,y1),phi=Math.atan2(y1,x1);
+  let p=[0,2*(th1-0)/D*0+ (4*phi-th1)/D*0 + 2*th1/D,D];// rough start; refined below
+  // better start: theta linear fit (Bertolazzi-Frego style)
+  p=[(6*phi-2*th1)/D-(2*th1-0)/D*0, 0, D]; p[1]=2*th1/D-p[0]; 
+  const F=q=>{const e=integ(q[0],q[1],q[2],200).at(-1);return [e[0]-x1,e[1]-y1,e[2]-th1];};
+  for(let it=0;it<60;it++){const f=F(p);if(Math.hypot(...f)<1e-11)break;const J=[[0,0,0],[0,0,0],[0,0,0]];
+    for(let j=0;j<3;j++){const q=p.slice(),h=1e-7*Math.max(1,Math.abs(p[j]));q[j]+=h;const g=F(q);for(let i=0;i<3;i++)J[i][j]=(g[i]-f[i])/h;}
+    const dp=solve3(J,f);let a=1;for(let k=0;k<20;k++){const q=p.map((v,i)=>v+a*dp[i]);if(q[2]>0&&Math.hypot(...F(q))<Math.hypot(...f)){p=q;break;}a/=2;if(k===19)p=q;}}
+  return p;}
+if(typeof module!=='undefined')module.exports={makeNet,fwd,bwd,lossGrad,makeAdam,adamStep,zerosLike,integ,classicalG1,rng,gauss,KEYS};
+// ---- L-BFGS on flattened (net + p) with backtracking line search ----
+function flat(P,p){const n=KEYS.reduce((s,k)=>s+P[k].length,0)+p.length,v=new Float64Array(n);let o=0;for(const k of KEYS){v.set(P[k],o);o+=P[k].length;}v.set(p,o);return v;}
+function unflat(v,P,p){let o=0;for(const k of KEYS){P[k].set(v.subarray(o,o+P[k].length));o+=P[k].length;}p.set(v.subarray(o,o+p.length));}
+function makeLBFGS(P,p,prob,T,m=12){
+  const G=zerosLike(P),gp=new Float64Array(p.length);
+  const fg=v=>{unflat(v,P,p);const r=lossGrad(P,p,prob,T,G,gp);return {r,g:flat(G,gp)};};
+  let x=flat(P,p),cur=fg(x);const S=[],Y=[],R=[];
+  const dot=(a,b)=>{let s=0;for(let i=0;i<a.length;i++)s+=a[i]*b[i];return s;};
+  return {step(){const g=cur.g,q=Float64Array.from(g),al=[];
+      for(let i=S.length-1;i>=0;i--){const a=R[i]*dot(S[i],q);al[i]=a;for(let j=0;j<q.length;j++)q[j]-=a*Y[i][j];}
+      if(S.length){const gm=dot(S.at(-1),Y.at(-1))/dot(Y.at(-1),Y.at(-1));for(let j=0;j<q.length;j++)q[j]*=gm;}
+      else{const gn=Math.sqrt(dot(g,g))||1;for(let j=0;j<q.length;j++)q[j]*=1e-3/gn;}
+      for(let i=0;i<S.length;i++){const b=R[i]*dot(Y[i],q);for(let j=0;j<q.length;j++)q[j]+=S[i][j]*(al[i]-b);}
+      let gd=-dot(g,q);if(!(gd<0)){S.length=Y.length=R.length=0;return cur.r;}
+      let a=1,nx,nw;for(let k=0;k<30;k++){nx=x.map((xi,j)=>xi-a*q[j]);nw=fg(nx);if(nw.r.L<=cur.r.L+1e-4*a*gd)break;a*=0.5;}
+      if(!(nw.r.L<cur.r.L)){unflat(x,P,p);return cur.r;}
+      const s=nx.map((v,j)=>v-x[j]),y=nw.g.map((v,j)=>v-cur.g[j]),sy=dot(s,y);
+      if(sy>1e-14){S.push(s);Y.push(y);R.push(1/sy);if(S.length>m){S.shift();Y.shift();R.shift();}}
+      x=nx;cur=nw;return cur.r;}};
+}
+if(typeof module!=='undefined')Object.assign(module.exports,{makeLBFGS});
+// ===== 問題4: 曲率分布の設計 (積分層＋射影) — ネットワークは j = dκ/dt だけを出力する =====
+// 格子 t_i = i/(n-1)．積分は台形則の累積和．射影は低次のルジャンドル多項式 4 本の補正で終点 4 条件を満たす．
+// 勾配: 損失 → jp (射影後) → j (射影前，陰関数の微分) → ネットワークの重み
+function makeMLP(H,seed){const r=rng(seed),P={H};const xav=(fi,fo)=>Math.sqrt(2/(fi+fo));
+  P.W1=new Float64Array(H).map(()=>gauss(r)*xav(1,H));P.b1=new Float64Array(H);
+  P.W2=new Float64Array(H*H).map(()=>gauss(r)*xav(H,H));P.b2=new Float64Array(H);
+  P.W3=new Float64Array(H);P.b3=new Float64Array(1);           // 最終層は 0 で初期化 (j = 0 から出発)
+  return P;}
+const MKEYS=['W1','b1','W2','b2','W3','b3'];
+function mlpZeros(P){const G={H:P.H};for(const k of MKEYS)G[k]=new Float64Array(P[k].length);return G;}
+function mlpFwd(P,t){const H=P.H,a1=new Float64Array(H),a2=new Float64Array(H);
+  for(let i=0;i<H;i++)a1[i]=Math.tanh(P.W1[i]*t+P.b1[i]);
+  for(let i=0;i<H;i++){let z=P.b2[i];const o=i*H;for(let j=0;j<H;j++)z+=P.W2[o+j]*a1[j];a2[i]=Math.tanh(z);}
+  let v=P.b3[0];for(let j=0;j<H;j++)v+=P.W3[j]*a2[j];return {t,a1,a2,v};}
+function mlpBwd(P,c,g,G){const H=P.H;G.b3[0]+=g;const ga2=new Float64Array(H);
+  for(let j=0;j<H;j++){G.W3[j]+=g*c.a2[j];ga2[j]=P.W3[j]*g;}
+  const ga1=new Float64Array(H);
+  for(let i=0;i<H;i++){const gz=ga2[i]*(1-c.a2[i]*c.a2[i]);G.b2[i]+=gz;const o=i*H;
+    for(let j=0;j<H;j++){G.W2[o+j]+=gz*c.a1[j];ga1[j]+=P.W2[o+j]*gz;}}
+  for(let i=0;i<H;i++){const gz=ga1[i]*(1-c.a1[i]*c.a1[i]);G.W1[i]+=gz*c.t;G.b1[i]+=gz;}}
+// 台形則の累積和 F_i = Σ_{k<i} (f_k + f_{k+1}) dt/2 とその随伴 (出力の勾配 → 入力の勾配)
+function cumtrapz(f,dt){const n=f.length,F=new Float64Array(n);for(let i=1;i<n;i++)F[i]=F[i-1]+(f[i-1]+f[i])*dt/2;return F;}
+function cumtrapzAdj(gF,dt){const n=gF.length,g=new Float64Array(n);let S=0;
+  for(let k=n-2;k>=0;k--){S+=gF[k+1];g[k]+=S*dt/2;g[k+1]+=S*dt/2;}return g;}
+// 積分層: j → κ → φ → (x, y)．弧長 s = L t
+function integrate(j,L,dt){const n=j.length,k=cumtrapz(j,dt),ph=cumtrapz(k.map(v=>L*v),dt);
+  const x=cumtrapz(ph.map(v=>L*Math.cos(v)),dt),y=cumtrapz(ph.map(v=>L*Math.sin(v)),dt);return {k,ph,x,y};}
+// 終点の 4 量 (無次元化: κL, φ, x/L, y/L) と，その jp についての勾配 (4 行)
+function endState(st,L){const n=st.k.length;return [st.k[n-1]*L,st.ph[n-1],st.x[n-1]/L,st.y[n-1]/L];}
+function endJac(st,L,dt){const n=st.k.length,rows=[];
+  const fromK=gk=>cumtrapzAdj(gk,dt);                          // κ の勾配 → j の勾配
+  const fromPh=gph=>fromK(cumtrapzAdj(gph,dt).map(v=>L*v));    // φ の勾配 → j の勾配
+  let e=new Float64Array(n);e[n-1]=L;rows.push(fromK(e));                       // κ(1) L
+  e=new Float64Array(n);e[n-1]=1;rows.push(fromPh(e));                          // φ(1)
+  const gx=new Float64Array(n);gx[n-1]=1/L;const gphx=cumtrapzAdj(gx,dt).map((v,i)=>-v*L*Math.sin(st.ph[i]));rows.push(fromPh(gphx)); // x(1)/L
+  const gy=new Float64Array(n);gy[n-1]=1/L;const gphy=cumtrapzAdj(gy,dt).map((v,i)=>v*L*Math.cos(st.ph[i]));rows.push(fromPh(gphy));  // y(1)/L
+  return rows;}
+// ルジャンドル多項式 P0..P3 (区間 [0,1] に写したもの)
+function legendre(t){const u=2*t-1;return [1,u,(3*u*u-1)/2,(5*u*u*u-3*u)/2];}
+function solve4(A,b){const M=A.map((r,i)=>[...r,b[i]]),n=4;
+  for(let i=0;i<n;i++){let p=i;for(let r=i+1;r<n;r++)if(Math.abs(M[r][i])>Math.abs(M[p][i]))p=r;[M[i],M[p]]=[M[p],M[i]];
+    for(let r=0;r<n;r++)if(r!==i){const f=M[r][i]/M[i][i];for(let c=i;c<=n;c++)M[r][c]-=f*M[i][c];}}
+  return M.map((r,i)=>r[n]/r[i]);}
+// 射影: jp = j + B c で終点 4 条件 (目標 tgt) を満たす c を，減衰の小さい Gauss–Newton (Levenberg–Marquardt) 法で求める
+// (code/ladder/clib.py の project と同じ．前回の c から始めると解の枝が飛ばない)
+function project(j,L,dt,B,tgt,c0,iters=8){const n=j.length;let c=c0?c0.slice():[0,0,0,0];
+  const evalc=c=>{const jp=new Float64Array(n);for(let i=0;i<n;i++){jp[i]=j[i];for(let m=0;m<4;m++)jp[i]+=B[i][m]*c[m];}
+    const st=integrate(jp,L,dt);const R=endState(st,L).map((v,i)=>v-tgt[i]);return {jp,st,R,r:Math.hypot(...R)};};
+  let cur=evalc(c);
+  for(let it=0;it<iters&&cur.r>1e-14;it++){const J=endJac(cur.st,L,dt);
+    const JB=J.map(row=>[0,1,2,3].map(m=>{let s=0;for(let i=0;i<n;i++)s+=row[i]*B[i][m];return s;}));
+    const A=[0,1,2,3].map(a=>[0,1,2,3].map(b=>{let s=0;for(let r=0;r<4;r++)s+=JB[r][a]*JB[r][b];return s+(a===b?1e-6:0);}));
+    const g=[0,1,2,3].map(a=>{let s=0;for(let r=0;r<4;r++)s+=JB[r][a]*cur.R[r];return s;});
+    const dc=solve4(A,g.map(v=>-v));c=c.map((v,m)=>v+dc[m]);cur=evalc(c);}
+  return {jp:cur.jp,st:cur.st,c,J:endJac(cur.st,L,dt),r:cur.r};}
+function curvLossGrad(P,prob,G,cache){const n=prob.n,dt=1/(n-1),L=prob.L,KM=prob.KM;
+  for(const k of MKEYS)G[k].fill(0);
+  const fw=[],j=new Float64Array(n);for(let i=0;i<n;i++){const c=mlpFwd(P,i*dt);fw.push(c);j[i]=KM*c.v;}
+  const pr=project(j,L,dt,prob.B,prob.tgt,cache.c,cache.c?6:30);cache.c=pr.c;const jp=pr.jp,st=pr.st;
+  // 滑らかさ L_s: κ'' = djp/dt (KM で正規化)．L1 か L2
+  const gjp=new Float64Array(n);let Ls=0;
+  for(let i=0;i<n-1;i++){const d=(jp[i+1]-jp[i])/dt/KM;
+    if(prob.smooth==='L1'){Ls+=Math.abs(d)/(n-1);const g=Math.sign(d)/(n-1)/dt/KM;gjp[i+1]+=g;gjp[i]-=g;}
+    else{Ls+=d*d/(n-1);const g=2*d/(n-1)/dt/KM;gjp[i+1]+=g;gjp[i]-=g;}}
+  // 制約 L_c: 最小半径 |κ| ≤ KM の超過分
+  let Lc=0;if(prob.cap){const gk=new Float64Array(n);
+    for(let i=0;i<n;i++){const e=Math.abs(st.k[i])/KM-1;if(e>0){Lc+=e*e/n;gk[i]=2*e*Math.sign(st.k[i])/KM/n*prob.wc;}}
+    const gj2=cumtrapzAdj(gk,dt);for(let i=0;i<n;i++)gjp[i]+=gj2[i];}
+  // 射影を通す: dL/dj = g - J^T (J B)^{-T} B^T g
+  const J=pr.J,B=prob.B;
+  const JB=J.map(row=>[0,1,2,3].map(m=>{let s=0;for(let i=0;i<n;i++)s+=row[i]*B[i][m];return s;}));
+  const Btg=[0,1,2,3].map(m=>{let s=0;for(let i=0;i<n;i++)s+=B[i][m]*gjp[i];return s;});
+  const JBT=[0,1,2,3].map(a=>[0,1,2,3].map(b=>JB[b][a]));const z=solve4(JBT,Btg);
+  const gj=new Float64Array(n);for(let i=0;i<n;i++){let s=gjp[i];for(let r=0;r<4;r++)s-=J[r][i]*z[r];gj[i]=s;}
+  for(let i=0;i<n;i++)mlpBwd(P,fw[i],KM*gj[i],G);
+  return {L:Ls+(prob.cap?prob.wc*Lc:0),Ls,Lc,jp,st};}
+function mlpAdam(P){const m={},v={};for(const k of MKEYS){m[k]=new Float64Array(P[k].length);v[k]=new Float64Array(P[k].length);}return {m,v,n:0};}
+function mlpAdamStep(A,P,G,lr){const b1=0.9,b2=0.999,eps=1e-8;A.n++;const c1=1-b1**A.n,c2=1-b2**A.n;
+  for(const k of MKEYS){const x=P[k],g=G[k],m=A.m[k],v=A.v[k];for(let i=0;i<x.length;i++){m[i]=b1*m[i]+(1-b1)*g[i];v[i]=b2*v[i]+(1-b2)*g[i]*g[i];x[i]-=lr*(m[i]/c1)/(Math.sqrt(v[i]/c2)+eps);}}}
+// 真の複合曲線 (クロソイド S1・円弧 S2・クロソイド S3，最大曲率 KM) の曲率
+function compositeKappa(s,S1,S2,S3,KM){if(s<S1)return KM*s/S1;if(s<S1+S2)return KM;if(s<S1+S2+S3)return KM*(S1+S2+S3-s)/S3;return 0;}
+function curvProblem(S1,S2,S3,R,n=201){const L=S1+S2+S3,KM=1/R,dt=1/(n-1);
+  const kt=new Float64Array(n);for(let i=0;i<n;i++)kt[i]=compositeKappa(i*dt*L,S1,S2,S3,KM);
+  // 真の j = dκ/dt (中心差分) を積分して終点を作る (学習側と同じ積分層)
+  const jt=new Float64Array(n);for(let i=0;i<n;i++){const a=kt[Math.max(0,i-1)],b=kt[Math.min(n-1,i+1)];jt[i]=(b-a)/((Math.min(n-1,i+1)-Math.max(0,i-1))*dt);}
+  const stT=integrate(jt,L,dt);const tgt=endState(stT,L);tgt[0]=0;
+  const B=[];for(let i=0;i<n;i++)B.push(legendre(i*dt));
+  return {n,L,KM,tgt,B,kTrue:stT.k,truth:stT,S1,S2,S3,R,smooth:'L1',cap:true,wc:1e5};}
+if(typeof module!=='undefined')Object.assign(module.exports,{makeMLP,mlpFwd,mlpBwd,mlpZeros,curvLossGrad,mlpAdam,mlpAdamStep,curvProblem,integrate,project,endState,endJac,cumtrapz,cumtrapzAdj,MKEYS});
+
+</script>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const DEG=Math.PI/180;
+const NT=128,T=Array.from({length:NT},(_,i)=>i/(NT-1));
+const CFG={design:{adam:3000,lb:600,lr:(i,n)=>2e-2*Math.pow(0.05,i/n)},inverse:{adam:4000,lb:400,lr:()=>3e-3},curv:{adam:3000,lb:0,lr:(i,n)=>5e-3*Math.pow(0.02,i/n)}};
+const TRUE={R:150,L:80};TRUE.A=Math.sqrt(TRUE.R*TRUE.L);
+const REF_INV=integ(0,1/TRUE.R,TRUE.L,400);
+let mode='design';
+const st={x1:79.433,y1:7.075,t1:15.279};
+let job=null,hist=[],net=null,par=null,classical=null,invData=null,nls=null,switchAt=null;
+const cst={s1:40,s2:30,r:100};let cprob=null,cnet=null,ccache=null,cout=null;
+
+// ---------- presets ----------
+const PRESETS=[['緩和曲線 R=150, L=80',79.433,7.075,15.279],['一般の G1 問題',100,40,60],['急な右カーブ',60,-30,-80],['変曲を含む',80,30,-20]];
+PRESETS.forEach(([n,x,y,t],i)=>{const b=document.createElement('button');b.className='chip';b.textContent=n;b.id='pre'+i;
+  b.onclick=()=>{setDesign(x,y,t);};$('presets').appendChild(b);});
+function syncInputs(){for(const k of ['x1','y1','t1']){$(k).value=(+st[k]).toFixed(1);$(k+'r').value=st[k];}
+  PRESETS.forEach((p,i)=>$('pre'+i).setAttribute('aria-pressed',Math.abs(p[1]-st.x1)<0.06&&Math.abs(p[2]-st.y1)<0.06&&Math.abs(p[3]-st.t1)<0.06));}
+function setDesign(x,y,t){stopJob();st.x1=x;st.y1=y;st.t1=t;syncInputs();resetModel();}
+for(const k of ['x1','y1','t1']){
+  $(k+'r').addEventListener('input',e=>{stopJob();st[k]=+e.target.value;syncInputs();resetModel();});
+  $(k).addEventListener('change',e=>{const v=+e.target.value;if(Number.isFinite(v)){stopJob();st[k]=v;syncInputs();resetModel();}});
+}
+for(const k of ['smax','sigma','wd','seed','phys','csm','ccap'])$(k).addEventListener('change',()=>{stopJob();resetModel();});
+function syncCurv(){for(const [k,id] of [['s1','cs1'],['s2','cs2'],['r','cr']]){$(id).value=cst[k];$(id+'r').value=cst[k];}}
+for(const [k,id] of [['s1','cs1'],['s2','cs2'],['r','cr']]){
+  $(id+'r').addEventListener('input',e=>{stopJob();cst[k]=+e.target.value;syncCurv();resetModel();});
+  $(id).addEventListener('change',e=>{const v=+e.target.value;if(Number.isFinite(v)){stopJob();cst[k]=v;syncCurv();resetModel();}});}
+
+// ---------- tabs ----------
+const EMB=/(^|[#?&])embed(=|&|$)/.test(location.hash+'&'+location.search);if(EMB)document.body.classList.add('embed');
+const NOTES={
+  design:{model:"x′ = L cos φ,  y′ = L sin φ,  φ′ = L κ,   κ = κ₀ + (κ₁−κ₀) t",
+    loss:"L = L_r + w_b L_b,   w_b = 10",
+    terms:"L_r: コロケーション点での方程式の残差の 2 乗平均．L_b: 終点の位置・方位の目標とのずれの 2 乗．始点は解を t·N(t) の形にして構造で満たす．",
+    net:"MLP (tanh 2 層 × 24)．出力に t を掛けて始点の条件を厳密に満たす．コロケーション点 128．設計変数 (κ₀, κ₁, L) もネットワークの重みと一緒に学習．Adam の後に L-BFGS で仕上げる．古典解は Simpson 積分と Newton 法によるシューティング．(スライドの実験より小さいネットワーク)"},
+  inverse:{model:"x′ = L cos φ,  y′ = L sin φ,  φ′ = L κ,   κ = t L / A²",
+    loss:"L = L_r + w_d L_d",
+    terms:"L_r: 方程式の残差の 2 乗平均．L_d: 測点での位置のずれの 2 乗平均．w_d はデータの重み (スライドでは 10, 100, 1000 を比較)．",
+    net:"MLP (tanh 2 層 × 24)，コロケーション点 128．未知の係数 A もネットワークの重みと一緒に学習．Adam の後に L-BFGS．最小二乗は「κ = s/A²」の方程式に A だけを当てはめる古典的な推定．"},
+  curv:{model:"j = dκ/dt を積分:  κ → φ → (x, y)．jp = j + Σ c_m P_m(t) で終点 4 条件を満たす",
+    loss:"L = L_s + w_c L_c,   w_c = 10⁵",
+    terms:"L_s: 滑らかさ (曲率の 2 階微分の L1 か L2)．L_c: 最小半径 |κ| ≤ 1/R_min を超えた分の 2 乗 (ReLU)．方程式 (L_r) と終点 (L_b) は積分層と射影で厳密に満たすので損失に入らない．",
+    net:"MLP (tanh 2 層 × 32，最終層を 0 で初期化) が j = dκ/dt を出力．台形則の積分層と，ルジャンドル多項式 4 本の補正 (Gauss–Newton 法) による射影．射影を通した勾配は陰関数の微分で計算．Adam 3,000 回．"}};
+function setNotes(){const N=NOTES[mode];$('eq-model').textContent=N.model;$('eq-loss').textContent=N.loss;$('eq-terms').textContent=N.terms;$('net-desc').textContent=N.net;
+  $('loss-note').textContent=mode==='curv'?'縦軸は log₁₀。滑らかさ L_s と制約の罰則 L_c (重みを掛ける前) の推移。':'縦軸は log₁₀。破線の位置で Adam から L-BFGS に切り替え。';
+  $('kap-note').textContent=mode==='curv'?'破線は真の複合曲線，点線は最小半径に対応する曲率の上限。L1 は区分線形 (クロソイドと円弧) を好む。':'クロソイドなら直線になる。PINN はネットワークの出力 φ を自動微分して描画。';}
+function setMode(m){stopJob();mode=m;for(const k of ['design','inverse','curv']){$('tab-'+k).setAttribute('aria-selected',m===k);$('ctl-'+k).hidden=m!==k;}
+  setNotes();
+  if(!EMB)try{localStorage.setItem('clothoid-tab',m);}catch(e){}
+  resetModel();}
+$('tab-design').onclick=()=>setMode('design');$('tab-inverse').onclick=()=>setMode('inverse');$('tab-curv').onclick=()=>setMode('curv');
+
+// ---------- model setup ----------
+function scaleD(){return mode==='design'?Math.hypot(st.x1,st.y1):TRUE.L;}
+function makeInvData(){const smax=+$('smax').value,sigma=+$('sigma').value,seed=Math.max(1,Math.round(+$('seed').value)||1);const r=rng(seed+100);
+  const s=[],x=[],y=[];for(let v=0;v<=smax+1e-9;v+=10){const i=Math.round(v/TRUE.L*400);s.push(v);x.push(REF_INV[i][0]+sigma*gauss(r));y.push(REF_INV[i][1]+sigma*gauss(r));}
+  return {s,x,y,seed};}
+function nlsA(d){// golden-section on A for the classical model kappa = s/A^2
+  const f=A=>{const P=integ(0,TRUE.L/(A*A),TRUE.L,400);let e=0;d.s.forEach((s,i)=>{const q=P[Math.round(s/TRUE.L*400)];e+=(q[0]-d.x[i])**2+(q[1]-d.y[i])**2;});return e;};
+  let a=40,b=400;const g=(Math.sqrt(5)-1)/2;let c=b-g*(b-a),dd=a+g*(b-a);for(let k=0;k<80;k++){if(f(c)<f(dd))b=dd;else a=c;c=b-g*(b-a);dd=a+g*(b-a);}return (a+b)/2;}
+function problem(){if(mode==='design'){const D=scaleD();return {mode:'design',X1:st.x1/D,Y1:st.y1/D,TH1:st.t1*DEG,w:10};}
+  const L=TRUE.L;return {mode:'inverse',physics:$('phys').checked,wd:+$('wd').value,td:invData.s.map(s=>s/L),xo:invData.x.map(v=>v/L),yo:invData.y.map(v=>v/L)};}
+function resetCurv(){cprob=curvProblem(cst.s1,cst.s2,cst.s1,cst.r);cprob.smooth=$('csm').value;cprob.cap=$('ccap').checked;
+  cnet=makeMLP(32,1);ccache={c:null};cout=curvLossGrad(cnet,cprob,mlpZeros(cnet),ccache);hist=[];switchAt=null;job=null;render();}
+function resetModel(){if(mode==='curv'){resetCurv();return;}
+  const seed=mode==='inverse'?Math.max(1,Math.round(+$('seed').value)||1):1;
+  net=makeNet(24,seed);par=mode==='design'?new Float64Array(3):new Float64Array([Math.log(0.01)]);hist=[];switchAt=null;
+  if(mode==='design'){classical=classicalG1(st.x1,st.y1,st.t1*DEG);}else{invData=makeInvData();nls=nlsA(invData);}
+  job=null;render();}
+
+// ---------- training loop ----------
+function startJob(){if(job&&job.done)resetModel();
+  if(mode==='curv'){if(!job)job={i:0,phase:'adam',cfg:CFG.curv,adam:mlpAdam(cnet),G:mlpZeros(cnet),last:null,done:false};
+    job.running=true;$('run').disabled=true;$('stop').disabled=false;tick();return;}
+  const prob=problem(),cfg=CFG[mode];
+  if(!job){job={i:0,phase:'adam',prob,cfg,adam:makeAdam(net,par),G:zerosLike(net),gp:new Float64Array(par.length),lb:null,last:null,done:false,t0:performance.now()};}
+  job.running=true;$('run').disabled=true;$('stop').disabled=false;tick();}
+function stopJob(){if(job)job.running=false;$('run').disabled=false;$('stop').disabled=true;}
+function tick(){if(!job||!job.running)return;const t0=performance.now(),j=job;
+  if(mode==='curv'){while(performance.now()-t0<14&&!j.done){cout=curvLossGrad(cnet,cprob,j.G,ccache);j.last={Lr:cout.Ls,Lb:cout.Lc};
+      mlpAdamStep(j.adam,cnet,j.G,j.cfg.lr(j.i,j.cfg.adam));j.i++;if(j.i%10===0)hist.push([j.i,cout.Ls,cout.Lc]);if(j.i>=j.cfg.adam){j.done=true;cout=curvLossGrad(cnet,cprob,mlpZeros(cnet),ccache);}}
+    render();if(j.done){stopJob();$('run').textContent='もう一度学習';return;}requestAnimationFrame(tick);return;}
+  while(performance.now()-t0<14&&!j.done){
+    if(j.phase==='adam'){j.last=lossGrad(net,par,j.prob,T,j.G,j.gp);adamStep(j.adam,net,j.G,par,j.gp,j.cfg.lr(j.i,j.cfg.adam));j.i++;
+      if(j.i%10===0)hist.push([j.i,j.last.Lr,j.last.Lb]);
+      if(j.i>=j.cfg.adam){j.phase='lbfgs';switchAt=j.i;j.lb=makeLBFGS(net,par,j.prob,T);j.k=0;}}
+    else{j.last=j.lb.step();j.k++;j.i++;if(j.k%2===0)hist.push([j.i,j.last.Lr,j.last.Lb]);if(j.k>=j.cfg.lb){j.done=true;hist.push([j.i,j.last.Lr,j.last.Lb]);}}
+  }
+  render();
+  if(j.done){stopJob();$('run').textContent='もう一度学習';return;}
+  requestAnimationFrame(tick);}
+$('run').onclick=()=>{$('run').textContent='学習を再開';startJob();};
+$('stop').onclick=()=>stopJob();
+$('reset').onclick=()=>{stopJob();$('run').textContent='学習を開始';resetModel();};
+
+// ---------- evaluation helpers ----------
+function pinnCurve(n=200){const D=scaleD(),out=[];for(let i=0;i<=n;i++){const c=fwd(net,i/n);out.push({x:c.x*D,y:c.y*D,th:c.th,thp:c.thp,t:i/n});}return out;}
+function paramsNow(){if(mode==='design'){const D=scaleD();return {k0:par[0]/D,k1:par[1]/D,L:Math.exp(par[2])*D};}
+  const ke=Math.exp(par[0]);return {k0:0,k1:ke/TRUE.L,L:TRUE.L,A:TRUE.L/Math.sqrt(ke)};}
+const fmt=(v,d=5)=>!Number.isFinite(v)?'—':Math.abs(v)<1e-3&&v!==0?v.toExponential(2).replace('e','×10^'):v.toFixed(d);
+function Aof(p){const dk=Math.abs(p.k1-p.k0);return dk>1e-12?Math.sqrt(p.L/dk):Infinity;}
+
+// ---------- rendering ----------
+function setupCanvas(cv){const r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;const w=Math.max(1,Math.round(r.width*dpr)),h=Math.max(1,Math.round(r.height*dpr));
+  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;}const g=cv.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);return {g,W:r.width,H:r.height};}
+let view=null;
+
+function curvPts(){const n=cprob.n,L=cprob.L,o=[],t=[];for(let i=0;i<n;i++){o.push({x:cout.st.x[i],y:cout.st.y[i]});t.push({x:cprob.truth.x[i],y:cprob.truth.y[i]});}return {o,t};}
+function drawPlanCurv(){const cv=$('plan');const {g,W,H}=setupCanvas(cv);
+  const C={grid:css('--grid'),rule:css('--rule'),ink:css('--ink'),muted:css('--muted'),pinn:css('--pinn'),ref:css('--ref'),tg:css('--target')};
+  g.clearRect(0,0,W,H);const {o,t}=curvPts();const pts=[...o,...t,{x:0,y:0}];
+  let x0=Math.min(...pts.map(p=>p.x)),x1=Math.max(...pts.map(p=>p.x)),y0=Math.min(...pts.map(p=>p.y)),y1=Math.max(...pts.map(p=>p.y));
+  const padX=(x1-x0)*0.08+8,padY=(y1-y0)*0.15+10;x0-=padX;x1+=padX;y0-=padY;y1+=padY;
+  const s=Math.min((W-56)/(x1-x0),(H-40)/(y1-y0));const cx=(x0+x1)/2,cy=(y0+y1)/2;const X=x=>W/2+16+(x-cx)*s,Y=y=>H/2-6-(y-cy)*s;view=null;
+  const step=s*10<18?50:(s*10<36?20:10);g.lineWidth=1;g.font='11px '+css('--f-mono');g.fillStyle=C.muted;
+  const gx0=Math.floor((cx-(W/2)/s)/step)*step,gx1=cx+(W/2)/s,gy0=Math.floor((cy-(H/2)/s)/step)*step,gy1=cy+(H/2)/s;
+  for(let x=gx0;x<=gx1;x+=step){g.strokeStyle=x===0?C.rule:C.grid;g.beginPath();g.moveTo(X(x),0);g.lineTo(X(x),H);g.stroke();if(X(x)>30&&X(x)<W-20)g.fillText(x.toFixed(0),X(x)+3,H-6);}
+  for(let y=gy0;y<=gy1;y+=step){g.strokeStyle=y===0?C.rule:C.grid;g.beginPath();g.moveTo(0,Y(y));g.lineTo(W,Y(y));g.stroke();if(Y(y)>14&&Y(y)<H-20)g.fillText(y.toFixed(0),4,Y(y)-3);}
+  g.setLineDash([6,5]);g.strokeStyle=C.ref;g.lineWidth=1.5;g.beginPath();t.forEach((p,i)=>i?g.lineTo(X(p.x),Y(p.y)):g.moveTo(X(p.x),Y(p.y)));g.stroke();g.setLineDash([]);
+  g.strokeStyle=C.pinn;g.lineWidth=3;g.lineJoin='round';g.beginPath();o.forEach((p,i)=>i?g.lineTo(X(p.x),Y(p.y)):g.moveTo(X(p.x),Y(p.y)));g.stroke();
+  arrow(g,X(0),Y(0),0,C.ink,26);dot(g,X(0),Y(0),4,C.ink);
+  const e=t[t.length-1],phf=cprob.tgt[1];arrow(g,X(e.x),Y(e.y),phf,C.tg,34);dot(g,X(e.x),Y(e.y),6,C.tg);}
+function drawKapCurv(){const {g,W,H}=setupCanvas($('kap'));g.clearRect(0,0,W,H);const m={l:58,r:12,t:10,b:22};
+  const n=cprob.n,L=cprob.L,KM=cprob.KM;const sv=i=>i/(n-1)*L;
+  const vals=[...cout.st.k,...cprob.kTrue,KM*1.05,0];let lo=Math.min(...vals),hi=Math.max(...vals);const sp=(hi-lo)||1e-3;lo-=sp*.1;hi+=sp*.1;
+  const {X,Y}=axes(g,W,H,m,[0,L*1.02],[lo,hi],v=>v+' m',v=>(v*1000).toFixed(1)+'‰');
+  g.save();g.beginPath();g.rect(m.l,m.t,W-m.l-m.r,H-m.t-m.b);g.clip();
+  g.strokeStyle=css('--bad');g.globalAlpha=.6;g.setLineDash([2,4]);g.lineWidth=1.2;g.beginPath();g.moveTo(X(0),Y(KM));g.lineTo(X(L),Y(KM));g.stroke();g.globalAlpha=1;
+  g.strokeStyle=css('--ref');g.lineWidth=1.5;g.setLineDash([6,5]);g.beginPath();for(let i=0;i<n;i++){const x=X(sv(i)),y=Y(cprob.kTrue[i]);i?g.lineTo(x,y):g.moveTo(x,y);}g.stroke();g.setLineDash([]);
+  g.strokeStyle=css('--pinn');g.lineWidth=2.5;g.beginPath();for(let i=0;i<n;i++){const x=X(sv(i)),y=Y(cout.st.k[i]);i?g.lineTo(x,y):g.moveTo(x,y);}g.stroke();g.restore();
+  g.fillStyle=css('--muted');g.font='11px '+css('--f-body');g.fillText('κ [1/m]（‰ = 10⁻³）',m.l+6,m.t+12);}
+function drawReadoutCurv(){const n=cprob.n,L=cprob.L,KM=cprob.KM;let kd=0,km=0;for(let i=0;i<n;i++){kd=Math.max(kd,Math.abs(cout.st.k[i]-cprob.kTrue[i]));km=Math.max(km,Math.abs(cout.st.k[i]));}
+  const E=endState(cout.st,L),T=cprob.tgt;const pos=Math.hypot((E[2]-T[2])*L,(E[3]-T[3])*L);
+  const rows=[['終点の位置のずれ [m]',pos<1e-9?'< 1e-9':fmt(pos,4),'0'],['終点の方位のずれ [°]',fmt(Math.abs(E[1]-T[1])/DEG,6),'0'],
+    ['曲率の最大誤差 (1/R_min 比)',(100*kd/KM).toFixed(1)+' %','0 %'],['最大曲率 × R_min',fmt(km/KM,3),'1'],['滑らかさ L_s',fmt(cout.Ls,3),'—'],['曲線長 L [m]',fmt(L,1),fmt(L,1)]];
+  $('ro').innerHTML='<thead><tr><th></th><th>学習</th><th>真値</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r[0]}</td><td class="p">${r[1]}</td><td>${r[2]}</td></tr>`).join('')+'</tbody>';
+  $('ro-note').textContent='終点の条件は射影で常に満たされる (学習の途中でも)。曲率の誤差は真の複合曲線との差。';}
+function render(){if(mode==='curv'){drawPlanCurv();drawLoss();drawKapCurv();drawReadoutCurv();drawStatus();drawLegend();return;}
+  drawPlan();drawLoss();drawKap();drawReadout();drawStatus();drawLegend();}
+function drawLegend(){const items=mode==='curv'?[['var(--pinn)','学習した曲線'],['var(--ref)','真の複合曲線',true],['var(--target)','終点の条件']]:mode==='design'?[['var(--pinn)','PINN の解'],['var(--ref)','古典解（シューティング）',true],['var(--target)','終点条件']]:
+  [[$('phys').checked?'var(--pinn)':'var(--bad)',$('phys').checked?'PINN の解':'データだけの NN'],['var(--ref)','真の線形',true],['var(--target)','測量点']];
+  $('legend').innerHTML=items.map(([c,t,d])=>`<span><i style="border-top-color:${c};${d?'border-top-style:dashed':''}"></i>${t}</span>`).join('');}
+function drawPlan(){const cv=$('plan');const {g,W,H}=setupCanvas(cv);
+  const C={grid:css('--grid'),rule:css('--rule'),ink:css('--ink'),muted:css('--muted'),pinn:css('--pinn'),ref:css('--ref'),tg:css('--target'),bad:css('--bad'),panel:css('--panel')};
+  g.clearRect(0,0,W,H);
+  const pc=pinnCurve();
+  let ref;if(mode==='design'){ref=integ(classical[0],classical[1],classical[2],200).map(p=>({x:p[0],y:p[1]}));}else{ref=REF_INV.map(p=>({x:p[0],y:p[1]}));}
+  // bounds from reference + targets (stable framing), PINN clipped softly
+  const pts=[...ref,{x:0,y:0}];if(mode==='design')pts.push({x:st.x1,y:st.y1});else invData.x.forEach((x,i)=>pts.push({x,y:invData.y[i]}));
+  let x0=Math.min(...pts.map(p=>p.x)),x1=Math.max(...pts.map(p=>p.x)),y0=Math.min(...pts.map(p=>p.y)),y1=Math.max(...pts.map(p=>p.y));
+  const padX=(x1-x0)*0.08+8,padY=(y1-y0)*0.15+10;x0-=padX;x1+=padX;y0-=padY;y1+=padY;
+  const s=Math.min((W-56)/(x1-x0),(H-40)/(y1-y0));const cx=(x0+x1)/2,cy=(y0+y1)/2;
+  const X=x=>W/2+16+(x-cx)*s,Y=y=>H/2-6-(y-cy)*s;view={X,Y,s,cx,cy,W,H};
+  // grid 10 m
+  const step=s*10<18?50:(s*10<36?20:10);g.lineWidth=1;g.font='11px '+css('--f-mono');g.fillStyle=C.muted;
+  const gx0=Math.floor((cx-(W/2)/s)/step)*step,gx1=cx+(W/2)/s,gy0=Math.floor((cy-(H/2)/s)/step)*step,gy1=cy+(H/2)/s;
+  for(let x=gx0;x<=gx1;x+=step){g.strokeStyle=x===0?C.rule:C.grid;g.beginPath();g.moveTo(X(x),0);g.lineTo(X(x),H);g.stroke();if(X(x)>30&&X(x)<W-20)g.fillText(x.toFixed(0),X(x)+3,H-6);}
+  for(let y=gy0;y<=gy1;y+=step){g.strokeStyle=y===0?C.rule:C.grid;g.beginPath();g.moveTo(0,Y(y));g.lineTo(W,Y(y));g.stroke();if(Y(y)>14&&Y(y)<H-20)g.fillText(y.toFixed(0),4,Y(y)-3);}
+  // tangent extension of start (straight approach)
+  g.strokeStyle=C.ref;g.globalAlpha=.5;g.setLineDash([2,4]);g.beginPath();g.moveTo(X(-1e3),Y(0));g.lineTo(X(0),Y(0));g.stroke();g.globalAlpha=1;
+  // reference
+  g.setLineDash([6,5]);g.strokeStyle=C.ref;g.lineWidth=1.5;g.beginPath();ref.forEach((p,i)=>i?g.lineTo(X(p.x),Y(p.y)):g.moveTo(X(p.x),Y(p.y)));g.stroke();g.setLineDash([]);
+  // inverse: unsurveyed zone label
+  // PINN curve
+  const col=mode==='inverse'&&!$('phys').checked?C.bad:C.pinn;
+  g.strokeStyle=col;g.lineWidth=3;g.lineJoin='round';g.beginPath();pc.forEach((p,i)=>i?g.lineTo(X(p.x),Y(p.y)):g.moveTo(X(p.x),Y(p.y)));g.stroke();
+  // collocation ticks
+  g.fillStyle=col;g.globalAlpha=.55;for(let i=0;i<pc.length;i+=Math.round(200/32)){const p=pc[i];g.beginPath();g.arc(X(p.x),Y(p.y),1.6,0,7);g.fill();}g.globalAlpha=1;
+  // stations every 20 m along PINN curve (arc length from L)
+  const Ls=paramsNow().L;g.fillStyle=C.ink;g.font='11px '+css('--f-mono');
+  for(let k=0;k*20<=Ls+1e-6;k++){const t=k*20/Ls;const c=fwd(net,Math.min(1,t)),D=scaleD();const px=X(c.x*D),py=Y(c.y*D);const nx=-Math.sin(c.th),ny=Math.cos(c.th);
+    g.strokeStyle=C.ink;g.lineWidth=1;g.beginPath();g.moveTo(px-nx*5,py+ny*5);g.lineTo(px+nx*5,py-ny*5);g.stroke();g.fillText('No.'+k,px+nx*9+2,py-ny*9-2);}
+  // start pose
+  arrow(g,X(0),Y(0),0,C.ink,26);dot(g,X(0),Y(0),4,C.ink);
+  if(mode==='design'){const ex=X(st.x1),ey=Y(st.y1);arrow(g,ex,ey,st.t1*DEG,C.tg,34);dot(g,ex,ey,6,C.tg);
+    const hx=ex+Math.cos(st.t1*DEG)*34,hy=ey-Math.sin(st.t1*DEG)*34;g.strokeStyle=C.tg;g.lineWidth=1.5;g.beginPath();g.arc(hx,hy,5,0,7);g.stroke();view.handle={hx,hy,ex,ey};}
+  else{invData.x.forEach((x,i)=>{g.fillStyle=C.tg;g.beginPath();g.arc(X(x),Y(invData.y[i]),4.2,0,7);g.fill();g.strokeStyle=C.panel;g.lineWidth=1.2;g.stroke();});
+    const smax=+$('smax').value;if(smax<TRUE.L){const i=Math.round(smax/TRUE.L*400),q=REF_INV[i];g.fillStyle=C.muted;g.font='12px '+css('--f-body');g.fillText('ここから先は未測量 →',X(q[0])-8,Y(q[1])+26);}}
+}
+function arrow(g,x,y,a,c,len){const ex=x+Math.cos(a)*len,ey=y-Math.sin(a)*len;g.strokeStyle=c;g.fillStyle=c;g.lineWidth=2;g.beginPath();g.moveTo(x,y);g.lineTo(ex,ey);g.stroke();
+  const h=7;g.beginPath();g.moveTo(ex,ey);g.lineTo(ex-h*Math.cos(a-0.4),ey+h*Math.sin(a-0.4));g.lineTo(ex-h*Math.cos(a+0.4),ey+h*Math.sin(a+0.4));g.closePath();g.fill();}
+function dot(g,x,y,r,c){g.fillStyle=c;g.beginPath();g.arc(x,y,r,0,7);g.fill();}
+function axes(g,W,H,m,xr,yr,xl,yl,ylog){const C={grid:css('--grid'),muted:css('--muted'),rule:css('--rule')};g.font='11px '+css('--f-mono');g.fillStyle=C.muted;g.lineWidth=1;
+  const X=v=>m.l+(v-xr[0])/(xr[1]-xr[0])*(W-m.l-m.r),Y=v=>H-m.b-(v-yr[0])/(yr[1]-yr[0])*(H-m.t-m.b);
+  const nice=(a,b,n)=>{const r=(b-a)/n,p=Math.pow(10,Math.floor(Math.log10(r))),f=r/p;const st=(f<1.5?1:f<3?2:f<7?5:10)*p;const o=[];for(let v=Math.ceil(a/st)*st;v<=b+st*1e-6;v+=st)o.push(+v.toPrecision(12));return o;};
+  const nd=Math.floor(yr[1])-Math.ceil(yr[0])+1,sk=Math.max(1,Math.ceil(nd/6));const yt=ylog?Array.from({length:nd},(_,i)=>Math.ceil(yr[0])+i).filter(v=>v%sk===0):nice(yr[0],yr[1],4);
+  yt.forEach(v=>{g.strokeStyle=C.grid;g.beginPath();g.moveTo(m.l,Y(v));g.lineTo(W-m.r,Y(v));g.stroke();g.textAlign='right';g.fillText(ylog?'1e'+v:yl(v),m.l-4,Y(v)+4);});
+  nice(xr[0],xr[1],5).forEach(v=>{g.textAlign='center';g.fillText(xl(v),X(v),H-m.b+14);});g.textAlign='left';
+  g.strokeStyle=C.rule;g.beginPath();g.moveTo(m.l,m.t);g.lineTo(m.l,H-m.b);g.lineTo(W-m.r,H-m.b);g.stroke();return {X,Y};}
+function drawLoss(){const {g,W,H}=setupCanvas($('loss'));g.clearRect(0,0,W,H);const m={l:46,r:12,t:10,b:22};
+  const total=CFG[mode].adam+CFG[mode].lb;const ys=hist.flatMap(h=>[h[1],h[2]]).filter(v=>v>0).map(Math.log10);
+  const yr=ys.length?[Math.max(-16,Math.floor(Math.min(...ys,-1))),Math.ceil(Math.max(...ys,0))]:[-8,0];
+  const {X,Y}=axes(g,W,H,m,[0,total],yr,v=>v>=1000?(v/1000)+'k':v,v=>v,true);
+  const xsw=CFG[mode].adam;if(CFG[mode].lb>0){g.strokeStyle=css('--muted');g.setLineDash([3,4]);g.beginPath();g.moveTo(X(xsw),m.t);g.lineTo(X(xsw),H-m.b);g.stroke();g.setLineDash([]);}
+  const line=(k,c,w,dash)=>{g.strokeStyle=c;g.lineWidth=w;g.setLineDash(dash||[]);g.beginPath();let f=true;hist.forEach(h=>{if(!(h[k]>0))return;const x=X(h[0]),y=Y(Math.log10(h[k]));f?g.moveTo(x,y):g.lineTo(x,y);f=false;});g.stroke();g.setLineDash([]);};
+  const phys=mode!=='inverse'||$('phys').checked;if(phys)line(1,css('--pinn'),2);line(2,css('--target'),2);
+  const lab=mode==='curv'?['滑らかさ L_s','制約 L_c']:mode==='design'?['方程式 L_r','境界 L_b']:['方程式 L_r','データ L_d'];
+  g.font='11px '+css('--f-body');g.fillStyle=css('--pinn');if(phys)g.fillText(lab[0],m.l+6,m.t+12);g.fillStyle=css('--target');g.fillText(lab[1],m.l+(phys?92:6),m.t+12);}
+function drawKap(){const {g,W,H}=setupCanvas($('kap'));g.clearRect(0,0,W,H);const m={l:58,r:12,t:10,b:22};
+  const p=paramsNow(),D=scaleD();let refK;
+  if(mode==='design')refK=[[0,classical[0]],[classical[2],classical[1]]];else refK=[[0,0],[TRUE.L,1/TRUE.R]];
+  const Lmax=Math.max(refK[1][0],p.L);const n=120,pk=[];
+  const phys=mode==='design'||$('phys').checked;
+  for(let i=0;i<=n;i++){const t=i/n;if(phys){const c=fwd(net,t);pk.push([t*p.L,c.thp/(p.L)]);}
+    else{const h=1e-3,a=fwd(net,Math.max(0,t-h)),b=fwd(net,t),c=fwd(net,Math.min(1,t+h));const dt=(Math.min(1,t+h)-Math.max(0,t-h));
+      const xp=(c.x-a.x)/dt,yp=(c.y-a.y)/dt,xpp=(c.x-2*b.x+a.x)/(h*h),ypp=(c.y-2*b.y+a.y)/(h*h);pk.push([t*TRUE.L,(xp*ypp-yp*xpp)/Math.pow(xp*xp+yp*yp,1.5)/TRUE.L]);}}
+  const vals=[...pk.map(q=>q[1]),refK[0][1],refK[1][1],0];let lo=Math.min(...vals),hi=Math.max(...vals);const sp=(hi-lo)||1e-3;lo-=sp*.1;hi+=sp*.1;
+  if(!phys){const r=Math.abs(refK[1][1]);lo=Math.max(lo,-6*r);hi=Math.min(hi,6*r);}
+  const {X,Y}=axes(g,W,H,m,[0,Lmax*1.02],[lo,hi],v=>v+' m',v=>(v*1000).toFixed(1)+'‰');
+  g.save();g.beginPath();g.rect(m.l,m.t,W-m.l-m.r,H-m.t-m.b);g.clip();
+  g.strokeStyle=css('--ref');g.lineWidth=1.5;g.setLineDash([6,5]);g.beginPath();g.moveTo(X(refK[0][0]),Y(refK[0][1]));g.lineTo(X(refK[1][0]),Y(refK[1][1]));g.stroke();g.setLineDash([]);
+  g.strokeStyle=phys?css('--pinn'):css('--bad');g.lineWidth=2.5;g.beginPath();pk.forEach((q,i)=>i?g.lineTo(X(q[0]),Y(q[1])):g.moveTo(X(q[0]),Y(q[1])));g.stroke();g.restore();
+  g.fillStyle=css('--muted');g.font='11px '+css('--f-body');g.fillText('κ [1/m]（‰ = 10⁻³）',m.l+6,m.t+12);}
+function drawReadout(){const p=paramsNow();let rows;
+  if(mode==='design'){const c={k0:classical[0],k1:classical[1],L:classical[2]};
+    rows=[['κ₀ 始点曲率 [1/m]',fmt(p.k0,6),fmt(c.k0,6)],['κ₁ 終点曲率 [1/m]',fmt(p.k1,6),fmt(c.k1,6)],['R₁ = 1/κ₁ [m]',fmt(1/p.k1,2),fmt(1/c.k1,2)],['L 曲線長 [m]',fmt(p.L,3),fmt(c.L,3)],['A = √(L/|Δκ|) [m]',fmt(Aof(p),2),fmt(Aof(c),2)]];
+    $('ro').innerHTML='<thead><tr><th></th><th>PINN</th><th>古典解</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${r[0]}</td><td class="p">${r[1]}</td><td>${r[2]}</td></tr>`).join('')+'</tbody>';
+    const e=integ(p.k0,p.k1,p.L,200).at(-1);$('ro-note').textContent=`PINN のパラメータで方程式を積分し直したときの終点ずれ: ${Math.hypot(e[0]-st.x1,e[1]-st.y1).toFixed(3)} m`;}
+  else{const phys=$('phys').checked;const pc=pinnCurve(400);let err=0,errIn=0;const smax=+$('smax').value;
+    pc.forEach((q,i)=>{const r=REF_INV[i];const e=Math.hypot(q.x-r[0],q.y-r[1]);err=Math.max(err,e);if(i/400*TRUE.L<=smax+1e-9)errIn=Math.max(errIn,e);});
+    rows=[['A [m]',phys?fmt(p.A,2):'推定不可',fmt(nls,2),fmt(TRUE.A,2)],['最大誤差 測量区間 [m]',fmt(errIn,3),'',''],['最大誤差 0–80 m [m]',fmt(err,3),'','']];
+    $('ro').innerHTML=`<thead><tr><th></th><th>${phys?'PINN':'NN'}</th><th>最小二乗</th><th>真値</th></tr></thead><tbody>`+rows.map(r=>`<tr><td>${r[0]}</td><td class="p">${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')+'</tbody>';
+    $('ro-note').textContent='最小二乗は「κ = s/A²」の常微分方程式モデルに A だけを当てはめた古典的な推定。';}}
+function drawStatus(){const j=job;const total=CFG[mode].adam+CFG[mode].lb;let ph='待機中',cls='';
+  if(j){ph=j.done?'完了':(j.phase==='adam'?'Adam':'L-BFGS');if(j.running)cls='run';}
+  const l=j&&j.last;$('status').innerHTML=`<span><span class="pill ${cls}">${ph}</span></span><span>反復 <b>${j?j.i:0}</b> / ${total}</span>`+
+    (l?(mode==='curv'?`<span>L_s <b>${l.Lr.toExponential(2)}</b></span><span>L_c <b>${l.Lb.toExponential(2)}</b></span>`:`<span>L_r <b>${(mode==='design'||$('phys').checked)?l.Lr.toExponential(2):'—'}</b></span><span>${mode==='design'?'L_b':'L_d'} <b>${l.Lb.toExponential(2)}</b></span>`):'');}
+
+// ---------- drag on plan ----------
+let drag=null;const cv=$('plan');
+function toWorld(ev){const r=cv.getBoundingClientRect();return {px:ev.clientX-r.left,py:ev.clientY-r.top};}
+cv.addEventListener('pointerdown',ev=>{if(mode!=='design'||!view)return;const {px,py}=toWorld(ev),h=view.handle;
+  if(Math.hypot(px-h.hx,py-h.hy)<14)drag='h';else if(Math.hypot(px-h.ex,py-h.ey)<16)drag='p';if(drag){cv.setPointerCapture(ev.pointerId);stopJob();}});
+cv.addEventListener('pointermove',ev=>{if(!drag)return;const {px,py}=toWorld(ev),v=view;
+  if(drag==='p'){st.x1=Math.round(((px-v.W/2-16)/v.s+v.cx)*2)/2;st.y1=Math.round((-(py-v.H/2+6)/v.s+v.cy)*2)/2;st.x1=Math.min(160,Math.max(20,st.x1));st.y1=Math.min(80,Math.max(-80,st.y1));}
+  else{const a=Math.atan2(-(py-v.handle.ey),px-v.handle.ex)/DEG;st.t1=Math.round(Math.max(-150,Math.min(150,a))*2)/2;}
+  syncInputs();classical=classicalG1(st.x1,st.y1,st.t1*DEG);drawPlan();drawReadout();});
+const endDrag=()=>{if(drag){drag=null;resetModel();}};cv.addEventListener('pointerup',endDrag);cv.addEventListener('pointercancel',endDrag);
+
+new ResizeObserver(()=>render()).observe(document.querySelector('.wrap'));
+syncInputs();syncCurv();
+// URL のハッシュ (または ?query) で頁と設定を指定する．スライドの iframe から使う
+//   mode=design|inverse|curv  embed (1 画面の配置)  theme=light|dark  accent=7A3EAD (強調色)  bg=F6F3F8 (地色)
+//   design: preset=0..3 または x1,y1,t1   inverse: smax,sigma,wd,seed,phys=0|1   curv: s1,s2,r,smooth=L1|L2,cap=0|1
+function applyParams(){const Q=new URLSearchParams(location.hash.slice(1)||location.search.slice(1));
+  if(Q.has('theme'))document.documentElement.dataset.theme=Q.get('theme');
+  if(Q.has('accent')){const a='#'+Q.get('accent').replace(/^#/,''),R=document.documentElement.style;R.setProperty('--pinn',a);R.setProperty('--pinn-soft','color-mix(in srgb, '+a+' 13%, transparent)');}
+  if(Q.has('bg')){const c='#'+Q.get('bg').replace(/^#/,''),R=document.documentElement.style;R.setProperty('--bg',c);R.setProperty('--panel','color-mix(in srgb, '+c+' 35%, #fff)');}
+  const num=k=>{const v=parseFloat(Q.get(k));return Number.isFinite(v)?v:null;};
+  if(Q.has('preset')){const p=PRESETS[num('preset')|0];if(p){st.x1=p[1];st.y1=p[2];st.t1=p[3];}}
+  for(const k of ['x1','y1','t1'])if(num(k)!==null)st[k]=num(k);
+  const sel=(id,v)=>{if(v!==null&&[...$(id).options].some(o=>o.value===String(v)))$(id).value=String(v);};
+  sel('smax',Q.get('smax'));sel('sigma',Q.get('sigma'));sel('wd',Q.get('wd'));sel('csm',Q.get('smooth'));
+  if(num('seed')!==null)$('seed').value=num('seed');
+  if(Q.has('phys'))$('phys').checked=Q.get('phys')!=='0';
+  if(Q.has('cap'))$('ccap').checked=Q.get('cap')!=='0';
+  for(const k of ['s1','s2','r'])if(num(k)!==null)cst[k]=num(k);
+  syncInputs();syncCurv();
+  const m=Q.get('mode');return ['design','inverse','curv'].includes(m)?m:null;}
+let saved='design';if(!EMB)try{saved=localStorage.getItem('clothoid-tab')||'design';}catch(e){}
+const pm=applyParams();
+setMode(pm||(['design','inverse','curv'].includes(saved)?saved:'design'));
+addEventListener('hashchange',()=>{const m=applyParams();setMode(m||mode);});
+if(document.fonts)document.fonts.ready.then(render);
+})();
+</script>
